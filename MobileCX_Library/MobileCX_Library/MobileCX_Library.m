@@ -83,8 +83,13 @@
 
 -(void)showMessageInViewControllerWithResponse:(NSMutableDictionary*)aResponseDict {
 
-    BOOL popUpFlag = [aResponseDict valueForKey:kisDialog];
-    
+    BOOL popUpFlag = FALSE;
+    NSNumber *isDialog = [aResponseDict valueForKey:kisDialog];
+    if ([isDialog intValue] == 1)
+        popUpFlag = TRUE;
+    else
+        popUpFlag = FALSE;
+        
     CGRect rect = [UIApplication sharedApplication].keyWindow.frame;
     rect.origin.x = 0;
     rect.origin.y = 0;

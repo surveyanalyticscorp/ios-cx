@@ -226,7 +226,7 @@
     return NO;
 }
 
--(void)processJson:(NSDictionary*)json{
+-(void)processJson:(NSMutableDictionary*)json{
      NSMutableDictionary* jsonDict = [json valueForKey:@"response"];
     NSString *surveyURL = [jsonDict valueForKey:@"surveyURL"];
     if([self.iDelegate respondsToSelector:@selector(CXServiceResponseWithURL:)]) {
