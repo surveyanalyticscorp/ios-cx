@@ -139,6 +139,48 @@
     
 }
 
+
+-(void)showInAppSurvey:(NSString*)surveyUrl withSuperView:(UIView*)appSuperview {
+        
+    CGRect rect = [UIApplication sharedApplication].keyWindow.frame;
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    rect.origin.x = 0;
+    rect.origin.y = 0;
+    rect.size.width = screenRect.size.width;
+    rect.size.height = screenRect.size.height;
+
+    self.iView = [[UIView alloc]initWithFrame:rect];
+    self.iView.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.6];
+    
+    UIView *frontView = [[UIView alloc]init];
+        frontView.frame = CGRectMake(30, 70, self.iView.frame.size.width-60, self.iView.frame.size.height-140);
+
+    frontView.backgroundColor = [UIColor whiteColor];
+    
+    self.iWebView=[[UIWebView alloc]initWithFrame:CGRectMake(00,16, frontView.frame.size.width, frontView.frame.size.height-16)];
+    self.iWebView.delegate=self;
+    NSURL *nsurl=[NSURL URLWithString: surveyUrl];
+    NSURLRequest *nsrequest=[NSURLRequest requestWithURL:nsurl];
+    [self.iWebView setBackgroundColor:[UIColor clearColor]];
+    [self.iWebView loadRequest:nsrequest];
+    [frontView addSubview:self.iWebView];
+    
+    [self.iView addSubview:frontView];
+    [appSuperview addSubview:self.iView];
+    [appSuperview bringSubviewToFront:self.iView];
+    
+    UIButton *doneButton = [UIButton buttonWithType: UIButtonTypeCustom];
+    [doneButton addTarget:self action:@selector(aDismissWebview:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIImage *closeButtonImage = [UIImage imageNamed:@"MobileCX_Resource.bundle/close-button_2.png"];
+    [doneButton setBackgroundImage:closeButtonImage forState:UIControlStateNormal];
+    [doneButton setBackgroundColor:[UIColor clearColor]];
+    doneButton.layer.cornerRadius = doneButton.bounds.size.width/2;
+    doneButton.frame = CGRectMake(self.iView.frame.size.width-80, -10, 30, 30);
+    [frontView addSubview:doneButton];
+    
+}
+
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)requestURL navigationType:(UIWebViewNavigationType)navigationType {
     NSURL *url = [requestURL URL];
     NSLog(@"##### url = %@",[url absoluteString]);
