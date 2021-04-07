@@ -21,7 +21,7 @@
 -(void)setPopupMenuTitle:(NSString*)aTitle Message:(NSString*)aMessage RightButtonTitle:(NSString*)aTitle LeftButtonTitle:(NSString*)aTitle;
 -(void)currentViewLoaded;
 -(void)currentViewUnLoaded;
-
+-(void)showInAppSurvey:(NSString*)surveyUrl withSuperView:(UIView*)appSuperview;
 
 
 @end
