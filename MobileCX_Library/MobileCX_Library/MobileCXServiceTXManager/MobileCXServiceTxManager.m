@@ -10,7 +10,7 @@
 #import "GlobalDataCX.h"
 
 
-#define kMobileCXServiceUrl    @"http://cx.surveyanalytics.com/a/api"
+#define kMobileCXServiceUrl    @"https://api.questionpro.com/a/api"
 #define kSAOfflineServiceKey @"87f682bb-bab3-4099-b7e9-da8779bba6b0"
 
 
@@ -29,7 +29,7 @@
 -(void)invokeServiceWithTouchPointID:(NSNumber*)aTouchPointID withAPIKey:(NSString*)apikey
 {
     NSString* path = nil;
-    path = [NSString stringWithFormat:@"/questionpro.cx.mobileTouchpoint?apiKey=%@",apikey];
+    path = [NSString stringWithFormat:@"/questionpro.cx.getSurveyURL?apiKey=%@",apikey];
     
     NSString* body = nil;
     body = [self createCXRequestWithTouchPointID:aTouchPointID];
@@ -43,8 +43,9 @@
     NSString* cxRequestString = nil;
     
     NSMutableDictionary *cxRequestDict = [[NSMutableDictionary alloc] init];
-    [cxRequestDict setObject:[GlobalDataCX getUUIDValueFromKeyChain] forKey:@"udid"];
-    [cxRequestDict setObject:aTouchPointID forKey:@"touchPointID"];
+    //[cxRequestDict setObject:[GlobalDataCX getUUIDValueFromKeyChain] forKey:@"udid"];
+    [cxRequestDict setObject:aTouchPointID forKey:@"surveyID"];
+    [cxRequestDict setObject:@"customer.feedback@questionpro.com" forKey:@"email"];//email id is mandatory
     NSError *error = nil;
     NSData *uploadData;
     
@@ -129,7 +130,7 @@
         SecTrustResultType trustResult;
         
             // Load the anchor certificate
-        NSString *certPath = [[NSBundle mainBundle] pathForResource:@"surveyanalytics" ofType:@"der"];
+        /*NSString *certPath = [[NSBundle mainBundle] pathForResource:@"surveyanalytics" ofType:@"cer"];
         
         NSData *anchorCertData = [[NSData alloc] initWithContentsOfFile:certPath];
         if (anchorCertData == nil) {
@@ -155,7 +156,9 @@
                  forAuthenticationChallenge:challenge];
                 // Certificate chain validation failed; cancel the connection
                 // [[challenge sender] cancelAuthenticationChallenge: challenge];
-        }
+        }*/
+        [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust]
+             forAuthenticationChallenge:challenge];
     }
 }
 
@@ -228,7 +231,7 @@
 
 -(void)processJson:(NSMutableDictionary*)json{
      NSMutableDictionary* jsonDict = [json valueForKey:@"response"];
-    NSString *surveyURL = [jsonDict valueForKey:@"surveyURL"];
+    NSString *surveyURL = [jsonDict valueForKey:@"SurveyURL"];
     if([self.iDelegate respondsToSelector:@selector(CXServiceResponseWithURL:)]) {
             [self.iDelegate CXServiceResponseWithURL:jsonDict];
     }

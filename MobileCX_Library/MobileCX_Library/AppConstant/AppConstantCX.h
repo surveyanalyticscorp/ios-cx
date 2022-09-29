@@ -13,7 +13,7 @@
 #endif /* AppConstantCX_h */
 
 /******* TouchPoint Response Constant *********/
-#define ksurveyURL @"surveyURL"
+#define ksurveyURL @"SurveyURL"
 #define kisDialog @"isDialog"
 
 /******* Keychain Constant *********/
