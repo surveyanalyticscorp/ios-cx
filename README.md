@@ -11,40 +11,36 @@
           3) mobileCX_Library.h
 
 
-First add mobileCX_Library.a and mobileCX_Resource.bundle file to 'Target Dependencies' section  in target 'Build Phases' setting. 
-Please refer to the screencast: https://app.screencast.com/ZWgPjcdG9pf7U
-                                https://app.screencast.com/cUIpqDPyp6bRl
+First add mobileCX_Library.a and mobileCX_Resource.bundle file to 'Target Dependencies' section  in target 'Build Phases' setting.<br>
+Please refer to the screens: [Screenshot1](https://app.screencast.com/ZWgPjcdG9pf7U), [Screenshot2](https://app.screencast.com/cUIpqDPyp6bRl)
 
-Second add libmobileCX_Library.a file to 'Link Binary With Libraries' section in target 'Build Phases' setting. 
-Please refer to the screencast: https://app.screencast.com/fDs7Lr8h3YPFJ
-                                 https://app.screencast.com/xTTbmOLoYFnUi
+Second add libmobileCX_Library.a file to 'Link Binary With Libraries' section in target 'Build Phases' setting.<br>
+Please refer to the screencast: [Screenshot1](https://app.screencast.com/fDs7Lr8h3YPFJ), [Screenshot2](https://app.screencast.com/xTTbmOLoYFnUi)
 
 
-Finally add mobileCX_Resource.bundle file to 'Copy Bundle Resource' section in target 'Build Phases' setting. 
-Please refer to the screencast: https://app.screencast.com/qb0lNBAGKPGCh
+Finally add mobileCX_Resource.bundle file to 'Copy Bundle Resource' section in target 'Build Phases' setting. <br>
+Please refer to the screencast: [Screenshot](https://app.screencast.com/qb0lNBAGKPGCh)
 
 Step 1:
-    Go to AppDelegate.h file and copy following lines
+    Go to AppDelegate.h file and copy following lines:
 
-    #import<MobileCX_Library/MobileCX_Library.h>  
-   @property (strong, nonatomic) MobileCX_Library *iMobileCX_Library;
-    + (AppDelegate *)sharedAppDelegate;
+   `#import<MobileCX_Library/MobileCX_Library.h>` <br>
+   `@property (strong, nonatomic) MobileCX_Library *iMobileCX_Library;
+    + (AppDelegate *)sharedAppDelegate;`
 
 Step 2:
-    Copy the below mentioned line in AppDelegate didFinishLaunchingWithOptions method
+    Copy the below mentioned line in AppDelegate didFinishLaunchingWithOptions method:
 
-self.iMobileCX_Library = [[MobileCX_Library alloc]initwithAPIKey:@"87f682bb-bab3-4099-b7e9-da8779bba6b0" withWindow:self.iWindow];
+`self.iMobileCX_Library = [[MobileCX_Library alloc]` <br> `initwithAPIKey:@"87f682bb-bab3-4099-b7e9-da8779bba6b0" withWindow:self.iWindow];`
 
 
  Step 3:
-    Don’t forget to include shared method in AppDelegate.m file
+    Don’t forget to include shared method in AppDelegate.m file:
 
-+ (AppDelegate *)sharedAppDelegate {
-    return (AppDelegate *)[UIApplication sharedApplication].delegate;
-}
+`(AppDelegate *)sharedAppDelegate {`<br>
+        `return (AppDelegate *)[UIApplication sharedApplication].delegate;` <br>
+`}`
 
  Step 4: 
-    To integrate touchpoint for particular event, copy the below mentioned lines:
-
-    [[SurveyAnalyticsAppDelegate sharedAppDelegate].iMobileCX_Library engageTouchPoint:@(115) WithViewControllerName:@"ListView"];
-
+    To integrate touchpoint for particular event, copy the below mentioned lines:<br>
+    `[[SurveyAnalyticsAppDelegate sharedAppDelegate].iMobileCX_Library engageTouchPoint:@(115) WithViewControllerName:@"ListView"]`
