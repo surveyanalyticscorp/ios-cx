@@ -12,14 +12,14 @@
 
 
 First add mobileCX_Library.a and mobileCX_Resource.bundle file to 'Target Dependencies' section  in target 'Build Phases' setting.<br>
-Please refer to the screens: [Screenshot1](https://app.screencast.com/ZWgPjcdG9pf7U), [Screenshot2](https://app.screencast.com/cUIpqDPyp6bRl)
+Please refer to the screens: [Screenshot1](https://app.screencast.com/ZWgPjcdG9pf7U){:target="_blank"}, [Screenshot2](https://app.screencast.com/cUIpqDPyp6bRl){:target="_blank"}
 
 Second add libmobileCX_Library.a file to 'Link Binary With Libraries' section in target 'Build Phases' setting.<br>
-Please refer to the screencast: [Screenshot1](https://app.screencast.com/fDs7Lr8h3YPFJ), [Screenshot2](https://app.screencast.com/xTTbmOLoYFnUi)
+Please refer to the screencast: [Screenshot1](https://app.screencast.com/fDs7Lr8h3YPFJ){:target="_blank"}, [Screenshot2](https://app.screencast.com/xTTbmOLoYFnUi){:target="_blank"}
 
 
 Finally add mobileCX_Resource.bundle file to 'Copy Bundle Resource' section in target 'Build Phases' setting. <br>
-Please refer to the screencast: [Screenshot](https://app.screencast.com/qb0lNBAGKPGCh)
+Please refer to the screencast: [Screenshot](https://app.screencast.com/qb0lNBAGKPGCh){:target="_blank"}
 
 Step 1:
     Go to AppDelegate.h file and copy following lines:
