@@ -21,6 +21,8 @@ Please refer to the screencast: [Screenshot1](https://app.screencast.com/fDs7Lr8
 Finally add mobileCX_Resource.bundle file to 'Copy Bundle Resource' section in target 'Build Phases' setting. <br>
 Please refer to the screencast: [Screenshot](https://app.screencast.com/qb0lNBAGKPGCh)
 
+### For Objective-C project
+
 Step 1:
     Go to AppDelegate.h file and copy following lines:
 
@@ -43,4 +45,29 @@ Step 2:
 
  Step 4: 
     To integrate touchpoint for particular event, copy the below mentioned lines:<br>
-    `[[SurveyAnalyticsAppDelegate sharedAppDelegate].iMobileCX_Library engageTouchPoint:@(115) WithViewControllerName:@"ListView"]`
+    `[[SurveyAnalyticsAppDelegate sharedAppDelegate].iMobileCX_Library engageTouchPoint:@(115) WithViewControllerName:@"ListView"]` <br><br>
+
+
+### For Swift project
+Step 1:<br>
+    Once the library is installed, we need to create a new bridging header file inside the Swift project (you can learn more about the Bridging Header file [here](https://developer.apple.com/documentation/swift/importing-objective-c-into-swift#). <br>
+    To add a bridging header file we need to right-click on the main project file from the project navigator, and then select New File. Once clicked, we need to select Header File. After this, we need to provide a suitable name to the Header file eg. **cx-library-bridging-header.h** [Screenshot](https://app.screencast.com/dYeqxWKGoDf3e).
+
+Step 2:<br>
+    Once the bridging header file is created, we need to add the below import in it.<br>
+    `#import <MobileCX_Library/MobileCX_Library.h>`.
+
+
+ Step 3:<br>
+    Now, open the AppDelegate.swift file. Create an object for MobileCX_Library like below:
+    `var mobileCXLibObj = MobileCX_Library()`,<br> 
+    Now in the application method of AppDelegate.swift file add the below line:
+    `mobileCXLibObj.initwithAPIKey("895cfa3d-a044-4d86-9352-c3e86e6dfeeb", with: window)`
+
+ Step 4: <br>
+    Now, open the ViewController.swift file. In this file create a reference to the **AppDelegate** <br>
+    `let appDelegate = UIApplication.shared.delegate as! AppDelegate`.<br>
+    Now in the overridden `viewDidLoad()` method using appDelegate reference we need to execute the **engageTouchPoint**  method of **MobileCX_Library**. <br>
+    `appDelegate.mobileCXLibObj.engageTouchPoint(8092755, withViewControllerName: "DemoLaunchView")`
+   
+
