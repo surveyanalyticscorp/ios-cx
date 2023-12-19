@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import "TouchPoint.h"
 
 @protocol CXServiceDelegate <NSObject>
 
@@ -28,6 +28,6 @@
 @property (nonatomic, retain) NSMutableData *receivedData;
 @property (nonatomic, retain) NSHTTPURLResponse* response;
 @property (weak , nonatomic) id <CXServiceDelegate> iDelegate;
--(void)invokeServiceWithTouchPointID:(NSNumber*)aTouchPointID withAPIKey:(NSString*)apikey;
+-(void)invokeServiceWithTouchPointID:(TouchPoint *) touchPoint withAPIKey:(NSString*)apikey;
 
 @end

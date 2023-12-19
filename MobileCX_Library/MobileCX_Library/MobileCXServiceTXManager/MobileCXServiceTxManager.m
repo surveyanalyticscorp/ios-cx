@@ -8,7 +8,7 @@
 
 #import "MobileCXServiceTxManager.h"
 #import "GlobalDataCX.h"
-
+#import "TouchPoint.h"
 
 #define kMobileCXServiceUrl    @"https://api.questionpro.com/a/api"
 #define kSAOfflineServiceKey @"87f682bb-bab3-4099-b7e9-da8779bba6b0"
@@ -26,29 +26,29 @@
 
 
 
--(void)invokeServiceWithTouchPointID:(NSNumber*)aTouchPointID withAPIKey:(NSString*)apikey
+-(void)invokeServiceWithTouchPointID:(TouchPoint*) touchPoint withAPIKey:(NSString*)apikey
 {
     NSString* path = nil;
     path = [NSString stringWithFormat:@"/questionpro.cx.getSurveyURL?apiKey=%@",apikey];
     
     NSString* body = nil;
-    body = [self createCXRequestWithTouchPointID:aTouchPointID];
+    body = [self createCXRequestWithTouchPointID:touchPoint];
     
     [self execute:@"POST" path:path body:body];
-
-        // [self get:path];
 }
 
--(NSString*)createCXRequestWithTouchPointID:(NSNumber*)aTouchPointID {
+-(NSString*)createCXRequestWithTouchPointID:(TouchPoint*) touchPoint {
     NSString* cxRequestString = nil;
     
     NSMutableDictionary *cxRequestDict = [[NSMutableDictionary alloc] init];
-    //[cxRequestDict setObject:[GlobalDataCX getUUIDValueFromKeyChain] forKey:@"udid"];
-    [cxRequestDict setObject:aTouchPointID forKey:@"surveyID"];
-    [cxRequestDict setObject:@"customer.feedback@questionpro.com" forKey:@"email"];//email id is mandatory
+    [cxRequestDict setObject:touchPoint.iTouchPointID forKey:@"surveyID"];
+    [cxRequestDict setObject:touchPoint.email forKey:@"email"];
+    [cxRequestDict setObject:touchPoint.firstName forKey:@"firstName"];
+    [cxRequestDict setObject:touchPoint.lastName forKey:@"lastName"];
+    [cxRequestDict setObject:touchPoint.mobile forKey:@"mobile"];
+    [cxRequestDict setObject:touchPoint.segmentCode forKey:@"S1"];
     NSError *error = nil;
     NSData *uploadData;
-    
         // Dictionary convertable to JSON ?
     if ([NSJSONSerialization isValidJSONObject:cxRequestDict] )
         {
