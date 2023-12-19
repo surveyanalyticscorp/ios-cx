@@ -21,6 +21,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		186517942B317E5100CA417B /* TouchPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 18A68CB42B2707D0007855EC /* TouchPoint.h */; };
+		18A68CB62B2707D0007855EC /* TouchPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 18A68CB42B2707D0007855EC /* TouchPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18A68CB72B2707D0007855EC /* TouchPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 18A68CB52B2707D0007855EC /* TouchPoint.m */; };
 		C21C87EE1CB3F2440018F420 /* GMDCircleLoader.h in Headers */ = {isa = PBXBuildFile; fileRef = C21C87EC1CB3F2440018F420 /* GMDCircleLoader.h */; };
 		C21C87EF1CB3F2440018F420 /* GMDCircleLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = C21C87ED1CB3F2440018F420 /* GMDCircleLoader.m */; };
 		C22C6FB31CB53EC700E56EA9 /* powered-by01x1x.png in Resources */ = {isa = PBXBuildFile; fileRef = C22C6FAF1CB53EC700E56EA9 /* powered-by01x1x.png */; };
@@ -59,6 +62,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				186517942B317E5100CA417B /* TouchPoint.h in CopyFiles */,
 				C283EC801CABACFA000BB41A /* MobileCX_Library.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,6 +70,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18A68CB42B2707D0007855EC /* TouchPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchPoint.h; sourceTree = "<group>"; };
+		18A68CB52B2707D0007855EC /* TouchPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchPoint.m; sourceTree = "<group>"; };
 		C21C87EC1CB3F2440018F420 /* GMDCircleLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMDCircleLoader.h; sourceTree = "<group>"; };
 		C21C87ED1CB3F2440018F420 /* GMDCircleLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMDCircleLoader.m; sourceTree = "<group>"; };
 		C22C6FAF1CB53EC700E56EA9 /* powered-by01x1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "powered-by01x1x.png"; sourceTree = "<group>"; };
@@ -115,6 +121,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18A68CB32B2707D0007855EC /* TouchPointModel */ = {
+			isa = PBXGroup;
+			children = (
+				18A68CB42B2707D0007855EC /* TouchPoint.h */,
+				18A68CB52B2707D0007855EC /* TouchPoint.m */,
+			);
+			path = TouchPointModel;
+			sourceTree = "<group>";
+		};
 		C21C87EB1CB3F2290018F420 /* ActivityIndicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +142,7 @@
 		C25C37421CC4D4F600941C9E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				18A68CB32B2707D0007855EC /* TouchPointModel */,
 				C2755A8C1CC50EFE00258F47 /* ResponseModel */,
 				C25C37431CC4D50E00941C9E /* TouchPointIDModel */,
 			);
@@ -267,6 +283,7 @@
 				C279FA361CABE9F400641AC2 /* MobileCX_Library.h in Headers */,
 				C279FA4E1CABFBAC00641AC2 /* GlobalDataCX.h in Headers */,
 				C279FA651CAC02B900641AC2 /* MobileCXServiceTxManager.h in Headers */,
+				18A68CB62B2707D0007855EC /* TouchPoint.h in Headers */,
 				C279FA471CABFB2400641AC2 /* KeychainItemWrapper.h in Headers */,
 				C25C37461CC4D55200941C9E /* TouchPointID.h in Headers */,
 				C2755A8F1CC50F3B00258F47 /* MobileCXResponse.h in Headers */,
@@ -338,6 +355,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = C283EC731CABACFA000BB41A;
@@ -406,6 +424,7 @@
 				C279FA661CAC02B900641AC2 /* MobileCXServiceTxManager.m in Sources */,
 				C25C37471CC4D55200941C9E /* TouchPointID.m in Sources */,
 				C21C87EF1CB3F2440018F420 /* GMDCircleLoader.m in Sources */,
+				18A68CB72B2707D0007855EC /* TouchPoint.m in Sources */,
 				C279FA481CABFB2400641AC2 /* KeychainItemWrapper.m in Sources */,
 				C2755A901CC50F3B00258F47 /* MobileCXResponse.m in Sources */,
 			);
