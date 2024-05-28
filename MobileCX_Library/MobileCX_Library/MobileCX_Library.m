@@ -26,6 +26,7 @@
 @property (nonatomic, assign, getter=isPresentViewFlag)BOOL iPresentViewFlag;
 @property (nonatomic, strong)NSNumber *iTouchPointName;
 @property (nonatomic, strong)NSString *iMobileCXApiKey ,*iCurrentViewName;
+@property (nonatomic, strong)TouchPoint *touchPoint;
 @end
 
 @implementation MobileCX_Library
@@ -51,22 +52,43 @@
 }
 
 
--(void)engageTouchPoint:(NSNumber*)aTouchPointID WithViewControllerName:(NSString*)aViewName {
-    self.iCurrentViewName = aViewName;
+//-(void)engageTouchPoint:(NSNumber*)aTouchPointID WithViewControllerName:(NSString*)aViewName {
+//    self.iCurrentViewName = aViewName;
+//    NSMutableDictionary *responseInfo = [[NSMutableDictionary alloc]init];
+//    responseInfo = [GlobalDataCX checkValueInUserDefaultforKey:[NSString stringWithFormat:@"%@%@",self.iTouchPointName,self.iCurrentViewName]];
+//    NSString *surveyURL = [responseInfo valueForKey:ksurveyURL];
+//    if (surveyURL != nil && surveyURL.length >0) {
+//        self.iResponseURL = surveyURL;
+//        [self showMessageInViewControllerWithResponse:responseInfo];
+//        [GlobalDataCX deleteUserDefaultValueforKey:[NSString stringWithFormat:@"%@%@",self.iTouchPointName,self.iCurrentViewName]];
+//    }else {
+//    MobileCXServiceTxManager *aMobileCXServiceTxManager = [[MobileCXServiceTxManager alloc]init];
+//    self.iTouchPointName = aTouchPointID;
+//    aMobileCXServiceTxManager.iDelegate = self;
+//    [aMobileCXServiceTxManager invokeServiceWithTouchPointID:(NSNumber*)aTouchPointID withAPIKey:self.iMobileCXApiKey];
+//    }
+//
+//}
+
+-(TouchPoint*)touchPointBuilder: (NSNumber*) touchPointID{    
+    self.touchPoint.iTouchPointID = touchPointID;
+    return self.touchPoint;
+}
+
+-(void)engageTouchPointWithParams:(TouchPoint*) touchPoint {
     NSMutableDictionary *responseInfo = [[NSMutableDictionary alloc]init];
-    responseInfo = [GlobalDataCX checkValueInUserDefaultforKey:[NSString stringWithFormat:@"%@%@",self.iTouchPointName,self.iCurrentViewName]];
+    responseInfo = [GlobalDataCX checkValueInUserDefaultforKey:[NSString stringWithFormat:@"%@",self.iTouchPointName]];
     NSString *surveyURL = [responseInfo valueForKey:ksurveyURL];
     if (surveyURL != nil && surveyURL.length >0) {
         self.iResponseURL = surveyURL;
         [self showMessageInViewControllerWithResponse:responseInfo];
-        [GlobalDataCX deleteUserDefaultValueforKey:[NSString stringWithFormat:@"%@%@",self.iTouchPointName,self.iCurrentViewName]];
+        [GlobalDataCX deleteUserDefaultValueforKey:[NSString stringWithFormat:@"%@",self.iTouchPointName]];
     }else {
     MobileCXServiceTxManager *aMobileCXServiceTxManager = [[MobileCXServiceTxManager alloc]init];
-    self.iTouchPointName = aTouchPointID;
+    self.iTouchPointName = touchPoint.iTouchPointID;
     aMobileCXServiceTxManager.iDelegate = self;
-    [aMobileCXServiceTxManager invokeServiceWithTouchPointID:(NSNumber*)aTouchPointID withAPIKey:self.iMobileCXApiKey];
-    }
-    
+    [aMobileCXServiceTxManager invokeServiceWithTouchPointID:(TouchPoint *)touchPoint withAPIKey:self.iMobileCXApiKey];
+    }    
 }
 
 - (void)stopMobileCXManager {

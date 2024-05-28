@@ -17,12 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [[AppDelegate sharedAppDelegate].iMobileCX_Library engageTouchPoint:@(8092755) WithViewControllerName:@"DemoLaunchView"];
-    //[[AppDelegate sharedAppDelegate].iMobileCX_Library showInAppSurvey:@"https://www.questionpro.com/t/mthZth" withSuperView: self.view];
-//    self.view.hidden = TRUE;
-    //6802488
-    //Intercept survey touchpointid: 7657541
-    // Do any additional setup after loading the view, typically from a nib.
+    TouchPoint *touchPoint = [[TouchPoint alloc] initWithTouchPointID:@(8092755)];
+    
+    //Here user can set available params like email, firstName, lastName, mobile and segmentCode.
+    //If nothing is set all of these params are set to "" i.e. empty string as default values.
+    touchPoint.email = @"prasad.bhide@quetionpro.com";
+    touchPoint.firstName = @"Prasad";
+    touchPoint.lastName = @"Bhide";
+
+    [[AppDelegate sharedAppDelegate].iMobileCX_Library engageTouchPointWithParams: touchPoint];
 }
 
 - (void)didReceiveMemoryWarning {
