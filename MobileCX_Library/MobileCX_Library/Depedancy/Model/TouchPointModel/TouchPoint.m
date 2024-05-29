@@ -16,6 +16,9 @@
 @synthesize mobile;
 @synthesize segmentCode;
 @synthesize iTouchPointID;
+@synthesize customVariable1;
+@synthesize customVariable2;
+@synthesize customVariable3;
 
 -(instancetype) initWithTouchPointID: (NSNumber*) touchPointID {
     self = [super init];
@@ -26,6 +29,9 @@
         self.mobile = @"";
         self.segmentCode = @"";
         self.iTouchPointID = touchPointID;
+        self.customVariable1 = @"";
+        self.customVariable2 = @"";
+        self.customVariable3 = @"";
     }
     return self;
 }

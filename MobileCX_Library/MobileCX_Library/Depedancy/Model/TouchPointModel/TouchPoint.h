@@ -16,5 +16,8 @@
 @property(nonatomic,strong)NSString *lastName;
 @property(nonatomic,strong)NSString *mobile;
 @property(nonatomic,strong)NSString *segmentCode;
+@property(nonatomic, strong)NSString *customVariable1;
+@property(nonatomic, strong)NSString *customVariable2;
+@property(nonatomic, strong)NSString *customVariable3;
 -(instancetype) initWithTouchPointID: (NSNumber*)touchPointID;
 @end

@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    self.iMobileCX_Library = [[MobileCX_Library alloc]initwithAPIKey:@"895cfa3d-a044-4d86-9352-c3e86e6dfeeb" withWindow:self.window];
+    self.iMobileCX_Library = [[MobileCX_Library alloc]initwithAPIKey:@"c3a95351-cacf-4f34-823c-99f5184fc5e9" withWindow:self.window];
 
     return YES;
 }
