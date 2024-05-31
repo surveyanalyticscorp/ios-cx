@@ -14,6 +14,8 @@
 +(NSString*)getUUIDValueFromKeyChain;
 +(BOOL)checkUUIDValueInKeyChain;
 +(void)addValueToUserDefault:(NSMutableDictionary*)aValue ForKey:(NSString*)aTouchPointIDKey;
++(void)addToUserDefault: (NSNumber*)value ForKey: (NSString*)key;
++(NSNumber*) getValueFromUserDefault: (NSString*) key;
 +(void)deleteUserDefaultValueforKey:(NSString*)aTouchPointIDKey;
 +(NSMutableDictionary*)checkValueInUserDefaultforKey:(NSString*)aTouchPointIDKey;
 

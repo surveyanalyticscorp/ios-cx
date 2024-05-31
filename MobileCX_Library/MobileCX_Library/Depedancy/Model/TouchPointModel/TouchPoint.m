@@ -16,6 +16,7 @@
 @synthesize mobile;
 @synthesize segmentCode;
 @synthesize iTouchPointID;
+@synthesize isShowInDialog;
 @synthesize customVariable1;
 @synthesize customVariable2;
 @synthesize customVariable3;
@@ -28,6 +29,7 @@
         self.lastName = @"";
         self.mobile = @"";
         self.segmentCode = @"";
+        self.isShowInDialog = @0; //boolean false value
         self.iTouchPointID = touchPointID;
         self.customVariable1 = @"";
         self.customVariable2 = @"";

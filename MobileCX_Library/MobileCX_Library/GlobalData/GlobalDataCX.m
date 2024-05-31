@@ -52,6 +52,19 @@
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
++(void) addToUserDefault:(NSNumber *)value ForKey:(NSString *)key {
+    [[NSUserDefaults standardUserDefaults] setObject:value forKey:[NSString stringWithFormat:@"%@",key]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(NSNumber*) getValueFromUserDefault:(NSString *)key {
+    NSNumber *defaultValue = [[NSNumber alloc]init];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@",key]]) {
+        defaultValue = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@",key]];
+    }
+    return defaultValue;
+}
+
 +(void)deleteUserDefaultValueforKey:(NSString*)aTouchPointIDKey {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:[NSString stringWithFormat:@"%@",aTouchPointIDKey]];
     [[NSUserDefaults standardUserDefaults] synchronize];

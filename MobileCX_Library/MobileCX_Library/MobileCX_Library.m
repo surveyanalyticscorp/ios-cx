@@ -76,6 +76,7 @@
 }
 
 -(void)engageTouchPointWithParams:(TouchPoint*) touchPoint {
+    [GlobalDataCX addToUserDefault:touchPoint.isShowInDialog ForKey:kisDialog];
     NSMutableDictionary *responseInfo = [[NSMutableDictionary alloc]init];
     responseInfo = [GlobalDataCX checkValueInUserDefaultforKey:[NSString stringWithFormat:@"%@",self.iTouchPointName]];
     NSString *surveyURL = [responseInfo valueForKey:ksurveyURL];
@@ -106,7 +107,7 @@
 -(void)showMessageInViewControllerWithResponse:(NSMutableDictionary*)aResponseDict {
 
     BOOL popUpFlag = FALSE;
-    NSNumber *isDialog = [aResponseDict valueForKey:kisDialog];
+    NSNumber *isDialog = [GlobalDataCX getValueFromUserDefault:[NSString stringWithFormat:@"%@",kisDialog]];
     if ([isDialog intValue] == 1)
         popUpFlag = TRUE;
     else
@@ -249,7 +250,6 @@
 -(void)CXServiceResponseWithURL:(NSMutableDictionary*)aResponseInfo {
     NSString *responseURL = [aResponseInfo valueForKey:ksurveyURL];
     NSLog(@"responseURL %@",[aResponseInfo valueForKey:ksurveyURL]);
-    NSLog(@"responsedialog %@",[aResponseInfo valueForKey:kisDialog]);
     if (responseURL != nil && responseURL.length >0 && ![responseURL isEqualToString:@"Empty"]) {
          self.iResponseURL = responseURL;
         NSString *strUserDefaultKey = [NSString stringWithFormat:@"%@%@",self.iTouchPointName,self.iCurrentViewName];
