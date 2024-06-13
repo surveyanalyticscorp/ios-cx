@@ -45,6 +45,18 @@
     if (dataCenter == DATA_CENTER_EU) {
         return @"EU";
     }
+    
+    if (dataCenter == DATA_CENTER_SG) {
+        return @"SG";
+    }
+        
+    if (dataCenter == DATA_CENTER_SA) {
+        return @"SA";
+    }
+    
+    if (dataCenter == DATA_CENTER_KSA) {
+        return @"KSA";
+    }
     return @"US";
 }
 
@@ -59,6 +71,12 @@
         return @"https://api.questionpro.eu";
     } else if ([dataCenter isEqualToString :@"CA"]){
         return @"https://api.questionpro.ca";
+    }else if ([dataCenter isEqualToString :@"SG"]){
+        return @"https://api.questionpro.sg";
+    } else if ([dataCenter isEqualToString :@"SA"]){
+        return @"https://api.surveyanalytics.com";
+    } else if ([dataCenter isEqualToString :@"KSA"]){
+        return @"https://api.questionprosa.com";
     }
        
     return @"https://api.questionpro.com";
