@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+typedef NS_ENUM(NSInteger, DataCenter) {
+    DATA_CENTER_US,
+    DATA_CENTER_AE,
+    DATA_CENTER_CA,
+    DATA_CENTER_AU,
+    DATA_CENTER_EU
+};
+
 @interface TouchPoint : NSObject
 
 @property(nonatomic,strong)NSNumber *iTouchPointID;
@@ -20,5 +28,6 @@
 @property(nonatomic, strong)NSString *customVariable1;
 @property(nonatomic, strong)NSString *customVariable2;
 @property(nonatomic, strong)NSString *customVariable3;
+@property(nonatomic, assign)DataCenter dataCenter;
 -(instancetype) initWithTouchPointID: (NSNumber*)touchPointID;
 @end

@@ -10,7 +10,6 @@
 #import "GlobalDataCX.h"
 #import "TouchPoint.h"
 
-#define kMobileCXServiceUrl    @"https://api.questionpro.com/a/api"
 #define kSAOfflineServiceKey @"87f682bb-bab3-4099-b7e9-da8779bba6b0"
 
 
@@ -26,16 +25,18 @@
 
 
 
--(void)invokeServiceWithTouchPointID:(TouchPoint*) touchPoint withAPIKey:(NSString*)apikey
+-(void)invokeServiceWithTouchPointID:(TouchPoint*) touchPoint withAPIKey:(NSString*)apikey DataCenter: (DataCenter)iDataCenter
 {
     NSString* path = nil;
     NSString* header = nil;
-    path = [NSString stringWithFormat:@"/v2/cx/transactions/survey-url"];
+    NSString* dataCenterString = [GlobalDataCX getDataCenterString:iDataCenter];
+    NSString* baseUrl =  [GlobalDataCX getBaseUrl:(NSString *)dataCenterString];
+    path = [NSString stringWithFormat:@"/a/api/v2/cx/transactions/survey-url"];
     
     NSString* body = nil;
     body = [self createCXRequestWithTouchPointID:touchPoint];
     
-    [self execute:@"POST" path:path body:body apiKey:apikey];
+    [self execute:@"POST" baseUrl:baseUrl path:path body:body apiKey:apikey];
 }
 
 -(NSString*)createCXRequestWithTouchPointID:(TouchPoint*) touchPoint {
@@ -99,9 +100,9 @@
      return cxRequestString;
 }
 
--(void)execute:(NSString*)method path:(NSString*)path body:(NSString*)body apiKey:(NSString*)apiKey {
+-(void)execute:(NSString*)method baseUrl: (NSString*)baseUrl path:(NSString*)path body:(NSString*)body apiKey:(NSString*)apiKey {
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] init];
-    NSString* url = [NSMutableString stringWithFormat:@"%@%@", kMobileCXServiceUrl,path];
+    NSString* url = [NSMutableString stringWithFormat:@"%@%@", baseUrl,path];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:method];
     request.timeoutInterval = 300;
@@ -118,10 +119,10 @@
     [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
--(void)get:(NSString*)path {
+-(void)get: (NSString*) baseUrl Path: (NSString*)path {
     
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] init];
-    NSString* url = [NSMutableString stringWithFormat:@"%@%@", kMobileCXServiceUrl,path];
+    NSString* url = [NSMutableString stringWithFormat:@"%@%@", baseUrl,path];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
     request.timeoutInterval = 300;

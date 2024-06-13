@@ -28,6 +28,6 @@
 @property (nonatomic, retain) NSMutableData *receivedData;
 @property (nonatomic, retain) NSHTTPURLResponse* response;
 @property (weak , nonatomic) id <CXServiceDelegate> iDelegate;
--(void)invokeServiceWithTouchPointID:(TouchPoint *) touchPoint withAPIKey:(NSString*)apikey;
+-(void)invokeServiceWithTouchPointID:(TouchPoint *) touchPoint withAPIKey:(NSString*)apikey DataCenter: (DataCenter) iDataCenter;
 
 @end

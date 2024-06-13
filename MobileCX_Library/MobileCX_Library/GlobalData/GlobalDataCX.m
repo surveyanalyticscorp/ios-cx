@@ -9,6 +9,7 @@
 #import "GlobalDataCX.h"
 #import "KeychainItemWrapper.h"
 #import "AppConstantCX.h"
+#import "TouchPoint.h"
 
 
 @implementation GlobalDataCX
@@ -22,6 +23,45 @@
     KeychainItemWrapper *keychain = nil;
     keychain = [[KeychainItemWrapper alloc] initWithIdentifier:kKeyChainWrapperBundleId accessGroup:nil];
     [keychain setObject:aUUID forKey:(__bridge id)kSecValueData];
+}
+
++(NSString*) getDataCenterString: (DataCenter) dataCenter {
+    if (dataCenter == DATA_CENTER_US) {
+        return @"US";
+    }
+        
+    if (dataCenter == DATA_CENTER_AE) {
+        return @"AE";
+    }
+        
+    if (dataCenter == DATA_CENTER_CA) {
+        return @"CA";
+    }
+        
+    if (dataCenter == DATA_CENTER_AU) {
+        return @"AU";
+    }
+    
+    if (dataCenter == DATA_CENTER_EU) {
+        return @"EU";
+    }
+    return @"US";
+}
+
++(NSString*) getBaseUrl:(NSString*) dataCenter {
+    if ([dataCenter isEqualToString :@"US"]) {
+        return @"https://api.questionpro.com";
+    } else if ([dataCenter isEqualToString :@"AE"]){
+        return @"https://api.questionpro.ae";
+    } else if ([dataCenter isEqualToString :@"AU"]){
+        return @"https://api.questionpro.au";
+    } else if ([dataCenter isEqualToString :@"EU"]){
+        return @"https://api.questionpro.eu";
+    } else if ([dataCenter isEqualToString :@"CA"]){
+        return @"https://api.questionpro.ca";
+    }
+       
+    return @"https://api.questionpro.com";
 }
 
 +(NSString*)getUUIDValueFromKeyChain {

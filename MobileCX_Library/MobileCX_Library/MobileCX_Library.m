@@ -25,13 +25,14 @@
 @property (nonatomic, assign)BOOL iPopUpViewFlag;
 @property (nonatomic, assign, getter=isPresentViewFlag)BOOL iPresentViewFlag;
 @property (nonatomic, strong)NSNumber *iTouchPointName;
-@property (nonatomic, strong)NSString *iMobileCXApiKey ,*iCurrentViewName;
+@property (nonatomic, strong)NSString *iApiKey ,*iCurrentViewName;
+@property (nonatomic, assign)DataCenter iDataCenter;
 @property (nonatomic, strong)TouchPoint *touchPoint;
 @end
 
 @implementation MobileCX_Library
 
--(instancetype)initwithAPIKey:(NSString*)apiKey withWindow:(UIWindow*)aWindow {
+-(instancetype)initwithAPIKey:(NSString*)apiKey DataCenter:(DataCenter) dataCenter withWindow:(UIWindow*)aWindow {
     
     static MobileCX_Library *sharedManager = nil;
     static dispatch_once_t onceToken;
@@ -44,7 +45,8 @@
         self.iPopupMenuLeftButtonTitle = @"Yes";
         self.iPresentViewFlag=TRUE;
         self.iPopUpViewFlag=TRUE;
-        self.iMobileCXApiKey =apiKey;
+        self.iApiKey =apiKey;
+        self.iDataCenter = dataCenter;
         self.iBaseWindow = aWindow;
         self.iCurrentViewName = @"";
     });
@@ -88,8 +90,8 @@
     MobileCXServiceTxManager *aMobileCXServiceTxManager = [[MobileCXServiceTxManager alloc]init];
     self.iTouchPointName = touchPoint.iTouchPointID;
     aMobileCXServiceTxManager.iDelegate = self;
-    [aMobileCXServiceTxManager invokeServiceWithTouchPointID:(TouchPoint *)touchPoint withAPIKey:self.iMobileCXApiKey];
-    }    
+        [aMobileCXServiceTxManager invokeServiceWithTouchPointID:(TouchPoint *)touchPoint withAPIKey:self.iApiKey DataCenter: self.iDataCenter];
+    }
 }
 
 - (void)stopMobileCXManager {
