@@ -16,6 +16,10 @@
 @synthesize mobile;
 @synthesize segmentCode;
 @synthesize iTouchPointID;
+@synthesize isShowInDialog;
+@synthesize customVariable1;
+@synthesize customVariable2;
+@synthesize customVariable3;
 
 -(instancetype) initWithTouchPointID: (NSNumber*) touchPointID {
     self = [super init];
@@ -25,7 +29,11 @@
         self.lastName = @"";
         self.mobile = @"";
         self.segmentCode = @"";
+        self.isShowInDialog = @0; //boolean false value
         self.iTouchPointID = touchPointID;
+        self.customVariable1 = @"";
+        self.customVariable2 = @"";
+        self.customVariable3 = @"";
     }
     return self;
 }

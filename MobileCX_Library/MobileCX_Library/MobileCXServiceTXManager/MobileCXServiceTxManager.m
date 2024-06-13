@@ -10,7 +10,6 @@
 #import "GlobalDataCX.h"
 #import "TouchPoint.h"
 
-#define kMobileCXServiceUrl    @"https://api.questionpro.com/a/api"
 #define kSAOfflineServiceKey @"87f682bb-bab3-4099-b7e9-da8779bba6b0"
 
 
@@ -26,27 +25,63 @@
 
 
 
--(void)invokeServiceWithTouchPointID:(TouchPoint*) touchPoint withAPIKey:(NSString*)apikey
+-(void)invokeServiceWithTouchPointID:(TouchPoint*) touchPoint withAPIKey:(NSString*)apikey DataCenter: (DataCenter)iDataCenter
 {
     NSString* path = nil;
-    path = [NSString stringWithFormat:@"/questionpro.cx.getSurveyURL?apiKey=%@",apikey];
+    NSString* header = nil;
+    NSString* dataCenterString = [GlobalDataCX getDataCenterString:iDataCenter];
+    NSString* baseUrl =  [GlobalDataCX getBaseUrl:(NSString *)dataCenterString];
+    path = [NSString stringWithFormat:@"/a/api/v2/cx/transactions/survey-url"];
     
     NSString* body = nil;
     body = [self createCXRequestWithTouchPointID:touchPoint];
     
-    [self execute:@"POST" path:path body:body];
+    [self execute:@"POST" baseUrl:baseUrl path:path body:body apiKey:apikey];
 }
 
 -(NSString*)createCXRequestWithTouchPointID:(TouchPoint*) touchPoint {
     NSString* cxRequestString = nil;
-    
+    NSNumber *isManualSurvey = @1; //boolean value for true.
     NSMutableDictionary *cxRequestDict = [[NSMutableDictionary alloc] init];
     [cxRequestDict setObject:touchPoint.iTouchPointID forKey:@"surveyID"];
-    [cxRequestDict setObject:touchPoint.email forKey:@"email"];
-    [cxRequestDict setObject:touchPoint.firstName forKey:@"firstName"];
-    [cxRequestDict setObject:touchPoint.lastName forKey:@"lastName"];
-    [cxRequestDict setObject:touchPoint.mobile forKey:@"mobile"];
-    [cxRequestDict setObject:touchPoint.segmentCode forKey:@"S1"];
+    [cxRequestDict setObject:isManualSurvey forKey:@"isManualSurvey"];
+    
+    if (![touchPoint.email  isEqual: @""]) {
+        [cxRequestDict setObject:touchPoint.email forKey:@"email"];
+    } else {
+        NSString* aUUID = [[NSUUID UUID] UUIDString];
+        NSString* defaultEmail = [aUUID stringByAppendingString:@"@questionpro.com"];
+        [cxRequestDict setObject:defaultEmail forKey:@"email"];
+    }
+    
+    if (![touchPoint.firstName isEqual: @""]) {
+        [cxRequestDict setObject:touchPoint.firstName forKey:@"firstName"];
+    }
+    
+    if (![touchPoint.lastName isEqual: @""]) {
+        [cxRequestDict setObject:touchPoint.lastName forKey:@"lastName"];
+    }
+    
+    if (![touchPoint.mobile isEqual: @""]) {
+        [cxRequestDict setObject:touchPoint.mobile forKey:@"mobile"];
+    }
+    
+    if (![touchPoint.segmentCode isEqual:@""]) {
+        [cxRequestDict setObject:touchPoint.segmentCode forKey:@"S1"];
+    }
+    
+    if (![touchPoint.customVariable1 isEqual:@""]) {
+        [cxRequestDict setObject:touchPoint.customVariable1 forKey:@"custom1"];
+    }
+    
+    if (![touchPoint.customVariable2 isEqual:@""]) {
+        [cxRequestDict setObject:touchPoint.customVariable2 forKey:@"custom2"];
+    }
+    
+    if (![touchPoint.customVariable3 isEqual:@""]) {
+        [cxRequestDict setObject:touchPoint.customVariable3 forKey:@"custom3"];
+    }
+    
     NSError *error = nil;
     NSData *uploadData;
         // Dictionary convertable to JSON ?
@@ -65,9 +100,9 @@
      return cxRequestString;
 }
 
--(void)execute:(NSString*)method path:(NSString*)path body:(NSString*)body {
+-(void)execute:(NSString*)method baseUrl: (NSString*)baseUrl path:(NSString*)path body:(NSString*)body apiKey:(NSString*)apiKey {
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] init];
-    NSString* url = [NSMutableString stringWithFormat:@"%@%@", kMobileCXServiceUrl,path];
+    NSString* url = [NSMutableString stringWithFormat:@"%@%@", baseUrl,path];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:method];
     request.timeoutInterval = 300;
@@ -75,17 +110,19 @@
         
         NSData *data = [body dataUsingEncoding:NSUTF8StringEncoding];
         [request setHTTPBody:data];
-        [request setValue:[NSString stringWithFormat:@"%ld", [data length]] forHTTPHeaderField:@"Content-Length"];
-        [request setValue:@"text/x-json" forHTTPHeaderField:@"Content-Type"];
+//        [request setValue:[NSString stringWithFormat:@"%ld", [data length]] forHTTPHeaderField:@"Content-Length"];
+//        [request setValue:@"text/x-json" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+        [request setValue:apiKey forHTTPHeaderField:@"api-key"];
     }
     
     [NSURLConnection connectionWithRequest:request delegate:self];
 }
 
--(void)get:(NSString*)path {
+-(void)get: (NSString*) baseUrl Path: (NSString*)path {
     
     NSMutableURLRequest* request = [[NSMutableURLRequest alloc] init];
-    NSString* url = [NSMutableString stringWithFormat:@"%@%@", kMobileCXServiceUrl,path];
+    NSString* url = [NSMutableString stringWithFormat:@"%@%@", baseUrl,path];
     [request setURL:[NSURL URLWithString:url]];
     [request setHTTPMethod:@"GET"];
     request.timeoutInterval = 300;
@@ -165,6 +202,7 @@
 
 -(BOOL)handleHttpError:(NSInteger)code {
         // Override to handle gracefully
+    printf("handleHttpError", code);
     return YES;
 }
 
@@ -196,26 +234,38 @@
         
         if([NSJSONSerialization isValidJSONObject:jsonData]){
             NSLog(@"data is JSON");
-            if ([jsonData objectForKey:@"status"]) {
-                NSDictionary* statusd = [jsonData objectForKey:@"status"];
-                NSNumber* statusId = [statusd objectForKey:@"id"];
-                if ([statusId intValue] == 200) {
+            if ([jsonData objectForKey:@"response"]) {
+                NSDictionary* response = [jsonData objectForKey:@"response"];
+                if ([response objectForKey:@"surveyURL"]) {
                     [self processJson:jsonData];
-                }
-                else
-                    {
+                } else if ([response objectForKey:@"error"]){
                     NSString * errorMessage = nil;
-                    if ([statusId intValue] == 500 ) {
-                        errorMessage = @"invalid request";
-                    }
-                    else if ([statusId intValue] == 0)
-                        {
-                        errorMessage = @"No Internet Connection Detected.";
-                        }
-                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"SurveyPocketApp" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-                        // [alertView show];
-                    }
+                    NSDictionary* error = [response objectForKey:@"error"];
+                    errorMessage = [error objectForKey:@"message"];
+                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                    [alertView show];
+                }
             }
+//            if ([jsonData objectForKey:@"status"]) {
+//                NSDictionary* statusd = [jsonData objectForKey:@"status"];
+//                NSNumber* statusId = [statusd objectForKey:@"id"];
+//                if ([statusId intValue] == 200) {
+//                    [self processJson:jsonData];
+//                }
+//                else
+//                    {
+//                    NSString * errorMessage = nil;
+//                    if ([statusId intValue] == 500 ) {
+//                        errorMessage = @"invalid request";
+//                    }
+//                    else if ([statusId intValue] == 0)
+//                        {
+//                        errorMessage = @"No Internet Connection Detected.";
+//                        }
+//                    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"SurveyPocketApp" message:errorMessage delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//                        // [alertView show];
+//                    }
+//            }
         }
         else{
             NSLog(@"data is not JSON");
@@ -231,7 +281,7 @@
 
 -(void)processJson:(NSMutableDictionary*)json{
      NSMutableDictionary* jsonDict = [json valueForKey:@"response"];
-    NSString *surveyURL = [jsonDict valueForKey:@"SurveyURL"];
+    NSString *surveyURL = [jsonDict valueForKey:@"surveyURL"];
     if([self.iDelegate respondsToSelector:@selector(CXServiceResponseWithURL:)]) {
             [self.iDelegate CXServiceResponseWithURL:jsonDict];
     }

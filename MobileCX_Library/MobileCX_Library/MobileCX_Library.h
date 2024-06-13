@@ -16,7 +16,7 @@
 
 @interface MobileCX_Library : NSObject
 
--(instancetype)initwithAPIKey:(NSString*)apiKey withWindow:(UIWindow*)aWindow;
+-(instancetype)initwithAPIKey:(NSString*)apiKey DataCenter:(DataCenter)dataCenter withWindow:(UIWindow*)aWindow;
 -(void)engageTouchPoint:(NSNumber*)aTouchPointID WithViewControllerName:(NSString*)aViewName;
 -(void)engageTouchPointWithParams:(TouchPoint*)touchPoint;
 -(void)stopMobileCXManager;

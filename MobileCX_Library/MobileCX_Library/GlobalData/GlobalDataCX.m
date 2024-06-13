@@ -9,6 +9,7 @@
 #import "GlobalDataCX.h"
 #import "KeychainItemWrapper.h"
 #import "AppConstantCX.h"
+#import "TouchPoint.h"
 
 
 @implementation GlobalDataCX
@@ -22,6 +23,63 @@
     KeychainItemWrapper *keychain = nil;
     keychain = [[KeychainItemWrapper alloc] initWithIdentifier:kKeyChainWrapperBundleId accessGroup:nil];
     [keychain setObject:aUUID forKey:(__bridge id)kSecValueData];
+}
+
++(NSString*) getDataCenterString: (DataCenter) dataCenter {
+    if (dataCenter == DATA_CENTER_US) {
+        return @"US";
+    }
+        
+    if (dataCenter == DATA_CENTER_AE) {
+        return @"AE";
+    }
+        
+    if (dataCenter == DATA_CENTER_CA) {
+        return @"CA";
+    }
+        
+    if (dataCenter == DATA_CENTER_AU) {
+        return @"AU";
+    }
+    
+    if (dataCenter == DATA_CENTER_EU) {
+        return @"EU";
+    }
+    
+    if (dataCenter == DATA_CENTER_SG) {
+        return @"SG";
+    }
+        
+    if (dataCenter == DATA_CENTER_SA) {
+        return @"SA";
+    }
+    
+    if (dataCenter == DATA_CENTER_KSA) {
+        return @"KSA";
+    }
+    return @"US";
+}
+
++(NSString*) getBaseUrl:(NSString*) dataCenter {
+    if ([dataCenter isEqualToString :@"US"]) {
+        return @"https://api.questionpro.com";
+    } else if ([dataCenter isEqualToString :@"AE"]){
+        return @"https://api.questionpro.ae";
+    } else if ([dataCenter isEqualToString :@"AU"]){
+        return @"https://api.questionpro.au";
+    } else if ([dataCenter isEqualToString :@"EU"]){
+        return @"https://api.questionpro.eu";
+    } else if ([dataCenter isEqualToString :@"CA"]){
+        return @"https://api.questionpro.ca";
+    }else if ([dataCenter isEqualToString :@"SG"]){
+        return @"https://api.questionpro.sg";
+    } else if ([dataCenter isEqualToString :@"SA"]){
+        return @"https://api.surveyanalytics.com";
+    } else if ([dataCenter isEqualToString :@"KSA"]){
+        return @"https://api.questionprosa.com";
+    }
+       
+    return @"https://api.questionpro.com";
 }
 
 +(NSString*)getUUIDValueFromKeyChain {
@@ -50,6 +108,19 @@
 +(void)addValueToUserDefault:(id)aValue ForKey:(NSMutableDictionary*)aTouchPointIDKey {
     [[NSUserDefaults standardUserDefaults] setObject:aValue forKey:[NSString stringWithFormat:@"%@",aTouchPointIDKey]];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(void) addToUserDefault:(NSNumber *)value ForKey:(NSString *)key {
+    [[NSUserDefaults standardUserDefaults] setObject:value forKey:[NSString stringWithFormat:@"%@",key]];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
++(NSNumber*) getValueFromUserDefault:(NSString *)key {
+    NSNumber *defaultValue = [[NSNumber alloc]init];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@",key]]) {
+        defaultValue = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@",key]];
+    }
+    return defaultValue;
 }
 
 +(void)deleteUserDefaultValueforKey:(NSString*)aTouchPointIDKey {

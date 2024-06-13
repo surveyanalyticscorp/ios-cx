@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TouchPoint.h"
 
 @interface GlobalDataCX : NSObject
 
@@ -14,8 +15,10 @@
 +(NSString*)getUUIDValueFromKeyChain;
 +(BOOL)checkUUIDValueInKeyChain;
 +(void)addValueToUserDefault:(NSMutableDictionary*)aValue ForKey:(NSString*)aTouchPointIDKey;
++(void)addToUserDefault: (NSNumber*)value ForKey: (NSString*)key;
++(NSNumber*) getValueFromUserDefault: (NSString*) key;
 +(void)deleteUserDefaultValueforKey:(NSString*)aTouchPointIDKey;
 +(NSMutableDictionary*)checkValueInUserDefaultforKey:(NSString*)aTouchPointIDKey;
-
-
++(NSString*)getBaseUrl: (NSString*) dataCenter;
++(NSString*)getDataCenterString: (DataCenter) dataCenter;
 @end
