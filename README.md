@@ -1,5 +1,5 @@
 # iOS-cx
-   Minimum iOS Version: 9.0
+   Minimum iOS Version: 11.0
 
 #### Including MobileCX_Lib into your project.
             OR
@@ -72,6 +72,14 @@ Step 2:<br>
     `let appDelegate = UIApplication.shared.delegate as! AppDelegate`.<br>
     Now in the overridden `viewDidLoad()` method using appDelegate reference we need to execute the **engageTouchPoint**  method of **MobileCX_Library**. <br>
     
-    appDelegate.mobileCXLibObj.engageTouchPoint('your_survey_id', withViewControllerName: "DemoLaunchView")
+    let touchPoint = TouchPoint(touchPointID: 'your_survey_id');
+    touchPoint?.email = "email_address";//Optional
+    appDelegate.mobileCXLibObj.engageTouchPoint(withParams: touchPoint);
+
+
+
+
+
+
    
 
