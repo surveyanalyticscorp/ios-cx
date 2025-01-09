@@ -181,10 +181,10 @@ public class QuestionProCXManager: NSObject, UIAlertViewDelegate, CXServiceDeleg
             frontView.addSubview(headerView)
             frontView.addSubview(hedearTextView)
             
-            doneButton.backgroundColor = UIColor.white
-            let closeButtonImage = UIImage(named: "close_white.png")
-            doneButton.setBackgroundImage(closeButtonImage, for: .normal)
-            doneButton.backgroundColor = UIColor.clear
+            let closeButtonImage = UIImage(systemName: "xmark",
+                                           withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .bold))
+            doneButton.setImage(closeButtonImage, for: .normal)
+            doneButton.tintColor = UIColor.white
             doneButton.layer.cornerRadius = doneButton.bounds.size.width / 2
             if popUpFlag {
                 doneButton.frame = CGRect(x: self.iView!.frame.size.width - 80, y: 10, width: 20, height: 20)
@@ -227,9 +227,10 @@ public class QuestionProCXManager: NSObject, UIAlertViewDelegate, CXServiceDeleg
         let doneButton = UIButton(type: .custom)
         doneButton.addTarget(self, action: #selector(aDismissWebview(_:)), for: .touchUpInside)
 
-        let closeButtonImage = UIImage(named: "close_white.png")
-        doneButton.setBackgroundImage(closeButtonImage, for: .normal)
-        doneButton.backgroundColor = UIColor.clear
+        let closeButtonImage = UIImage(systemName: "xmark",
+                                       withConfiguration: UIImage.SymbolConfiguration(pointSize: 16, weight: .bold))
+        doneButton.setImage(closeButtonImage, for: .normal)
+        doneButton.tintColor = UIColor.white
         doneButton.layer.cornerRadius = doneButton.bounds.size.width / 2
         doneButton.frame = CGRect(x: self.iView!.frame.size.width - 80, y: -10, width: 25, height: 25)
         frontView.addSubview(doneButton)
