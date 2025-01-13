@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewController() // Replace with your root view controller
+        window.rootViewController = ViewController()
         self.window = window
         window.makeKeyAndVisible()
         print("launching survey")
