@@ -15,3 +15,12 @@ MobileCXFramework/QuestionProCXFramework.xcodeproj/xcuserdata/admin.xcuserdatad/
 MobileCXFramework/QuestionProCXFramework.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/xcschememanagement.plist
 .DS_Store
 .DS_Store
+*.lock
+/XCFrameworkConsumer/Pods
+XCFrameworkConsumer/XCFrameworkConsumer.xcodeproj/xcuserdata/admin.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+*.xcbkptlist
+*.xcbkptlist
+*.xcworkspacedata
+*.xcuserstate
+/XCFrameworkConsumer/XCFrameworkConsumer.xcodeproj/xcuserdata/admin.xcuserdatad/xcdebugger
+*.xcbkptlist
