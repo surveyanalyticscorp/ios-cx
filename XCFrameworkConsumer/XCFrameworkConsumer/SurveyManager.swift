@@ -9,8 +9,8 @@ class SurveyManager {
     let touchPoint = TouchPoint()
 
     func initializeSurvey(window: UIWindow) {
-        let apiKey = "c3a95351-cacf-4f34-823c-99f5184fc5e9"
-        let surveyId = 11543908
+        let apiKey = "REPLACE_WITH_YOUR_WORKSPACE_API_KEY"
+        let surveyId = 1111
 
         iQuestionProCXManager.initwithAPIKey(
             apiKey: apiKey,
