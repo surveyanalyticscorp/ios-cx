@@ -1,6 +1,7 @@
 import UIKit
 import QuestionProCXFramework
 
+@MainActor
 class SurveyManager {
     static let shared = SurveyManager()
 
@@ -9,8 +10,8 @@ class SurveyManager {
     let touchPoint = TouchPoint()
 
     func initializeSurvey(window: UIWindow) {
-        let apiKey = "REPLACE_WITH_YOUR_WORKSPACE_API_KEY"
-        let surveyId = 1111
+        let apiKey = "5e706b2b-dd69-4df5-bcf9-1fd9190854ad"
+        let surveyId = 8282698
 
         iQuestionProCXManager.initwithAPIKey(
             apiKey: apiKey,

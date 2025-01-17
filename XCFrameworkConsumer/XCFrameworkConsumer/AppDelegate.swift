@@ -8,7 +8,7 @@
 import UIKit
 import QuestionProCXFramework
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     public var window: UIWindow?
