@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
         } else {
             if (self.window != nil) {
-                SurveyManager.shared.initializeSurvey(window: window!)
+                SurveyManager.shared.initializeSurvey(window: window!, showInDialog: true)
             }
         }
         return true

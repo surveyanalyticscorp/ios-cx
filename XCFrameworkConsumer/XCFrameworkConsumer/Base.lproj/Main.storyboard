@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,23 +19,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="XCFrameWork Consumer " textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Opm-Mh-QcG">
-                                <rect key="frame" x="20" y="362" width="353" height="128"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="6Vj-Ys-MX2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vm-Dt-vzB">
+                                <rect key="frame" x="114" y="739" width="165" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Full Screen Survey"/>
+                                <connections>
+                                    <action selector="fullScreenSurveyButtonTouchUpInside_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3Kg-eb-4d7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vnx-t9-dNl">
+                                <rect key="frame" x="131" y="627" width="130" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Popup Survey"/>
+                                <connections>
+                                    <action selector="popupSurveyButtonTouchUpInside_sender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VwK-pi-f4Z"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.97974361882991712" green="1" blue="0.96307269380818994" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Opm-Mh-QcG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MEF-jn-Fiv"/>
-                            <constraint firstItem="Opm-Mh-QcG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ZPL-7n-NjF"/>
-                            <constraint firstItem="Opm-Mh-QcG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="z94-QR-jgQ"/>
+                            <constraint firstItem="7vm-Dt-vzB" firstAttribute="top" secondItem="Vnx-t9-dNl" secondAttribute="bottom" constant="77" id="KYy-2a-5QP"/>
+                            <constraint firstItem="7vm-Dt-vzB" firstAttribute="centerX" secondItem="Vnx-t9-dNl" secondAttribute="centerX" id="Sji-fC-iyx"/>
+                            <constraint firstItem="wLN-ds-MHv" firstAttribute="top" secondItem="7vm-Dt-vzB" secondAttribute="bottom" constant="44" id="g3h-vi-o6X"/>
+                            <constraint firstItem="7vm-Dt-vzB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hPP-uG-Gtr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="fullScreenSurveyButton" destination="7vm-Dt-vzB" id="IE5-2H-Rb3"/>
+                        <outlet property="popupSurveyButton" destination="Vnx-t9-dNl" id="WqS-6c-FvS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
