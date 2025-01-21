@@ -10,8 +10,8 @@ class SurveyManager {
     let touchPoint = TouchPoint()
 
     func initializeSurvey(window: UIWindow, showInDialog: Bool) {
-        let apiKey = "04d4d48a-37b9-4c08-8638-9b50744ac32e"
-        let surveyId = 6927573
+        let apiKey = "5e706b2b-dd69-4df5-bcf9-1fd9190854ad"
+        let surveyId = 12174640
 
         iQuestionProCXManager.initwithAPIKey(
             apiKey: apiKey,
@@ -26,6 +26,7 @@ class SurveyManager {
         touchPoint.customVariable2 = "India"
         touchPoint.customVariable3 = "Wakad"
         touchPoint.ShowInDialog = showInDialog
+        touchPoint.transactionLanguage = "English"
 
         iQuestionProCXManager.launchFeedbackSurvey(touchPoint: touchPoint)
     }
