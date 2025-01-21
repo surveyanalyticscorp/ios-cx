@@ -53,6 +53,7 @@ public class TouchPoint {
   public var lastName: Swift.String
   public var mobile: Swift.String
   public var segmentCode: Swift.String
+  public var transactionLanguage: Swift.String
   public var ShowInDialog: Swift.Bool
   public var customVariable1: Swift.String
   public var customVariable2: Swift.String
