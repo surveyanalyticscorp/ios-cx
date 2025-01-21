@@ -3,14 +3,7 @@
 MobileCXFramework/.DS_Store
 MobileCXFramework/MobileCXFramework/.DS_Store
 MobileCXFramework/output/.DS_Store
-MobileCXFramework/QuestionProCXFramework.xcodeproj/project.xcworkspace/contents.xcworkspacedata
-MobileCXFramework/QuestionProCXFramework.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
-MobileCXFramework/QuestionProCXFramework.xcodeproj/project.xcworkspace/xcshareddata/WorkspaceSettings.xcsettings
-MobileCXFramework/QuestionProCXFramework.xcodeproj/project.xcworkspace/xcuserdata/admin.xcuserdatad/IDEFindNavigatorScopes.plist
-MobileCXFramework/QuestionProCXFramework.xcodeproj/project.xcworkspace/xcuserdata/admin.xcuserdatad/UserInterfaceState.xcuserstate
-MobileCXFramework/QuestionProCXFramework.xcodeproj/project.xcworkspace/xcuserdata/admin.xcuserdatad/WorkspaceSettings.xcsettings
-MobileCXFramework/QuestionProCXFramework.xcodeproj/project.xcworkspace/xcuserdata/root.xcuserdatad/UserInterfaceState.xcuserstate
-MobileCXFramework/QuestionProCXFramework.xcodeproj/project.xcworkspace/xcuserdata/root.xcuserdatad/WorkspaceSettings.xcsettings
+
 MobileCXFramework/QuestionProCXFramework.xcodeproj/xcuserdata/admin.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 MobileCXFramework/QuestionProCXFramework.xcodeproj/xcuserdata/admin.xcuserdatad/xcschemes/xcschememanagement.plist
 .DS_Store
@@ -20,7 +13,7 @@ MobileCXFramework/QuestionProCXFramework.xcodeproj/xcuserdata/admin.xcuserdatad/
 XCFrameworkConsumer/XCFrameworkConsumer.xcodeproj/xcuserdata/admin.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 *.xcbkptlist
 *.xcbkptlist
-*.xcworkspacedata
+
 *.xcuserstate
 /XCFrameworkConsumer/XCFrameworkConsumer.xcodeproj/xcuserdata/admin.xcuserdatad/xcdebugger
 *.xcbkptlist
