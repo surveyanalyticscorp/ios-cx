@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4BB7A7E61C21DBD72DC97A0D /* Pods_XCFrameworkConsumer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BACCE8F1629D9813D24D13 /* Pods_XCFrameworkConsumer.framework */; };
-		8407539A2D3A22EA00F86DAA /* QuestionProCXFramework.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840753992D3A22EA00F86DAA /* QuestionProCXFramework.xcframework */; };
-		8407539B2D3A22EA00F86DAA /* QuestionProCXFramework.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 840753992D3A22EA00F86DAA /* QuestionProCXFramework.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8447F6362C5A9FF20067F3B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84F7F49F2C58D1AB00154D58 /* Main.storyboard */; };
 		84D1569F2D140CCD007DB294 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1569E2D140CCD007DB294 /* SceneDelegate.swift */; };
 		84D156A12D141B02007DB294 /* SurveyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D156A02D141B02007DB294 /* SurveyManager.swift */; };
@@ -20,24 +18,9 @@
 		84F7F4A62C58D1AC00154D58 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 84F7F4A52C58D1AC00154D58 /* Base */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		8407539C2D3A22EA00F86DAA /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				8407539B2D3A22EA00F86DAA /* QuestionProCXFramework.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		0EBB6F5F0B6F3D8FBA797700 /* Pods-XCFrameworkConsumer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XCFrameworkConsumer.debug.xcconfig"; path = "Target Support Files/Pods-XCFrameworkConsumer/Pods-XCFrameworkConsumer.debug.xcconfig"; sourceTree = "<group>"; };
 		75BACCE8F1629D9813D24D13 /* Pods_XCFrameworkConsumer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_XCFrameworkConsumer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		840753992D3A22EA00F86DAA /* QuestionProCXFramework.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = QuestionProCXFramework.xcframework; path = "../../pearl-cx/iOS-SDK/MobileCXFramework/output/QuestionProCXFramework.xcframework"; sourceTree = "<group>"; };
 		84D1569E2D140CCD007DB294 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		84D156A02D141B02007DB294 /* SurveyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyManager.swift; sourceTree = "<group>"; };
 		84F7F4962C58D1AB00154D58 /* XCFrameworkConsumer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCFrameworkConsumer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -55,7 +38,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8407539A2D3A22EA00F86DAA /* QuestionProCXFramework.xcframework in Frameworks */,
 				4BB7A7E61C21DBD72DC97A0D /* Pods_XCFrameworkConsumer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,7 +48,6 @@
 		6B254689AEBB56E3824E48B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				840753992D3A22EA00F86DAA /* QuestionProCXFramework.xcframework */,
 				75BACCE8F1629D9813D24D13 /* Pods_XCFrameworkConsumer.framework */,
 			);
 			name = Frameworks;
@@ -125,7 +106,7 @@
 				84F7F4922C58D1AB00154D58 /* Sources */,
 				84F7F4932C58D1AB00154D58 /* Frameworks */,
 				84F7F4942C58D1AB00154D58 /* Resources */,
-				8407539C2D3A22EA00F86DAA /* Embed Frameworks */,
+				C57A403529BE3C04A7191F19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +185,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C57A403529BE3C04A7191F19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XCFrameworkConsumer/Pods-XCFrameworkConsumer-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-XCFrameworkConsumer/Pods-XCFrameworkConsumer-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-XCFrameworkConsumer/Pods-XCFrameworkConsumer-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
