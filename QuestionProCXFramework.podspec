@@ -7,7 +7,7 @@ Pod::Spec.new do |spec|
     spec.author        = { 'QuestionPro' => 'mobile@questionpro.com' }
     spec.license       = { :type => 'MIT', :file => 'LICENSE' }
     spec.source        = { :git => 'https://github.com/surveyanalyticscorp/ios-cx.git', :tag => spec.version }
-    spec.swift_version = '6.0'
+    spec.swift_version = '4.0'
     spec.ios.deployment_target = '15.0'
     spec.vendored_frameworks = [
       "QuestionProCXFramework.xcframework"
