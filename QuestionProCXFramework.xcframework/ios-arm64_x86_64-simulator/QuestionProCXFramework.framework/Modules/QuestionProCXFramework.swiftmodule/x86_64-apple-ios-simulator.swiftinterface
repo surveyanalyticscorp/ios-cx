@@ -81,7 +81,7 @@ public class TouchPoint {
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor public class QuestionProCXManager : ObjectiveC.NSObject, UIKit.UIAlertViewDelegate, QuestionProCXFramework.CXServiceDelegate, WebKit.WKNavigationDelegate, WebKit.WKScriptMessageHandler {
   @_Concurrency.MainActor public func showApiError(message: Swift.String)
-  @_Concurrency.MainActor public func apiSuccess(response: Foundation.Data, headers: [Swift.String : Swift.String])
+  @_Concurrency.MainActor public func apiSuccess(response: Swift.String, headers: [Swift.String : Swift.String])
   @_Concurrency.MainActor public func apiFailure(touchPoint: QuestionProCXFramework.TouchPoint, apiKey: Swift.String, apiBaseUrl: Swift.String, port: Swift.String, accessToken: Swift.String)
   @_Concurrency.MainActor @preconcurrency @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
   @_Concurrency.MainActor public func launchSurveyOnApiSuccess(withURL response: [Swift.String : Any])
@@ -126,7 +126,7 @@ public class TouchPoint {
   @_Concurrency.MainActor func decryptData(apiResponse: (Swift.String, [Swift.String : Swift.String]), completion: @escaping (_ decryptedData: Swift.String?) -> Swift.Void)
 }
 @_Concurrency.MainActor public protocol CXServiceDelegate : ObjectiveC.NSObjectProtocol {
-  @_Concurrency.MainActor func apiSuccess(response: Foundation.Data, headers: [Swift.String : Swift.String])
+  @_Concurrency.MainActor func apiSuccess(response: Swift.String, headers: [Swift.String : Swift.String])
   @_Concurrency.MainActor func apiFailure(touchPoint: QuestionProCXFramework.TouchPoint, apiKey: Swift.String, apiBaseUrl: Swift.String, port: Swift.String, accessToken: Swift.String)
   @_Concurrency.MainActor func showApiError(message: Swift.String)
 }
