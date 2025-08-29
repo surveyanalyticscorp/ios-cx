@@ -207,7 +207,7 @@ public class TouchPoint {
   public static func printMessage(logTag: QuestionProCXFramework.LogTag = .LOG_INFO, message: Swift.String)
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor public class QuestionProCX : ObjectiveC.NSObject, UIKit.UIAlertViewDelegate, WebKit.WKNavigationDelegate, QuestionProCXFramework.SurveyLaunchDelegate {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor public class QuestionProCX : ObjectiveC.NSObject, UIKit.UIAlertViewDelegate, WebKit.WKNavigationDelegate, WebKit.WKScriptMessageHandler, QuestionProCXFramework.SurveyLaunchDelegate {
   @_Concurrency.MainActor public static var instance: QuestionProCXFramework.QuestionProCX?
   @_Concurrency.MainActor public func launchSurveyForIntercept(interceptId: Swift.Int, satisfiedRule: QuestionProCXFramework.Rule)
   @_Concurrency.MainActor public func setScreenName(screenName: Swift.String)
@@ -234,6 +234,7 @@ public class TouchPoint {
   @_Concurrency.MainActor public func setQuestionProCallbackDelegate(questionProCallbackDelegate: any QuestionProCXFramework.QuestionProCallbackDelegate)
   @_Concurrency.MainActor public func enableLogs(enabledLogs: Swift.Bool)
   @_Concurrency.MainActor public func launchFeedbackSurvey(showInDialog: Swift.Bool, triggerDelayInSeconds: Swift.Int)
+  @_Concurrency.MainActor @preconcurrency @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
   @_Concurrency.MainActor public func showSurvey(isInAppSurvey: Swift.Bool)
   @_Concurrency.MainActor public func stopQuestionProCXManager()
   @_Concurrency.MainActor public func loadSurveyURLInWebView()
