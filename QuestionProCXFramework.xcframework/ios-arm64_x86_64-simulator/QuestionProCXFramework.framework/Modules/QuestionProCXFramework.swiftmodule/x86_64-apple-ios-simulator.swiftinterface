@@ -24,7 +24,7 @@ public struct CoreSurveyURL : Swift.Codable {
   public static func getUpdateInterceptSurveyLaunchEventURL() -> Swift.String
   public static func getCoreSurveyFeedbackURL() -> Swift.String
   @_Concurrency.MainActor public static func updateInterceptSurveyLaunchEvent(interceptData: QuestionProCXFramework.Intercept, visitorId: Swift.String, surveyType: Swift.String)
-  public static func getBaseUrl(dataCenter: Swift.String, configType: Swift.String) -> Swift.String
+  public static func getBaseUrl(dataCenter: Swift.String) -> Swift.String
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class CacheUtils {
@@ -109,7 +109,6 @@ public let kIsSurveyLaunched: Swift.String
 public let kIntercepts: Swift.String
 public let kApiKey: Swift.String
 public let kDataCenter: Swift.String
-public let kConfigType: Swift.String
 public enum APIRequestType : Swift.String {
   case GET
   case POST
@@ -207,7 +206,7 @@ public struct SurveyURL : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public class TouchPoint {
-  public init(dataCenter: QuestionProCXFramework.TouchPoint.DataCenter, configType: QuestionProCXFramework.TouchPoint.ConfigType)
+  public init(dataCenter: QuestionProCXFramework.TouchPoint.DataCenter)
   public enum DataCenter : Swift.String, Swift.Codable {
     case DATA_CENTER_US
     case DATA_CENTER_AE
@@ -223,19 +222,9 @@ public class TouchPoint {
       get
     }
   }
-  public enum ConfigType : Swift.String, Swift.Codable {
-    case SURVEY
-    case INTERCEPT
-    public init?(rawValue: Swift.String)
-    public typealias RawValue = Swift.String
-    public var rawValue: Swift.String {
-      get
-    }
-  }
   public var dataCenter: QuestionProCXFramework.TouchPoint.DataCenter
-  public var configType: QuestionProCXFramework.TouchPoint.ConfigType
   public var customVariables: [Swift.Int : Swift.String]?
-  public static func initTouchPoint(dataCenter: QuestionProCXFramework.TouchPoint.DataCenter, configType: QuestionProCXFramework.TouchPoint.ConfigType) -> QuestionProCXFramework.TouchPoint
+  public static func initTouchPoint(dataCenter: QuestionProCXFramework.TouchPoint.DataCenter) -> QuestionProCXFramework.TouchPoint
   public func setCustomVariables(_ customVariables: [Swift.Int : Swift.String]?) -> QuestionProCXFramework.TouchPoint
   public func getCustomVariables() -> [Swift.Int : Swift.String]?
   @objc deinit
@@ -328,7 +317,4 @@ extension QuestionProCXFramework.LogTag : Swift.RawRepresentable {}
 extension QuestionProCXFramework.TouchPoint.DataCenter : Swift.Equatable {}
 extension QuestionProCXFramework.TouchPoint.DataCenter : Swift.Hashable {}
 extension QuestionProCXFramework.TouchPoint.DataCenter : Swift.RawRepresentable {}
-extension QuestionProCXFramework.TouchPoint.ConfigType : Swift.Equatable {}
-extension QuestionProCXFramework.TouchPoint.ConfigType : Swift.Hashable {}
-extension QuestionProCXFramework.TouchPoint.ConfigType : Swift.RawRepresentable {}
 extension QuestionProCXFramework.QuestionProCX : Swift.Sendable {}
