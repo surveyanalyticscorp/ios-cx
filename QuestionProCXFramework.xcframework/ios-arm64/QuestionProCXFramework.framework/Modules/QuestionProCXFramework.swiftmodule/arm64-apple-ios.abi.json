@@ -4745,27 +4745,6 @@
           },
           {
             "kind": "Function",
-            "name": "stopQuestionProCXManager",
-            "printedName": "stopQuestionProCXManager()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:22QuestionProCXFramework0aB9CXManagerC04stopabD0yyF",
-            "mangledName": "$s22QuestionProCXFramework0aB9CXManagerC04stopabD0yyF",
-            "moduleName": "QuestionProCXFramework",
-            "declAttributes": [
-              "Custom",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "setPopupMenuTitle",
             "printedName": "setPopupMenuTitle(aTitle:message:rightButtonTitle:leftButtonTitle:)",
             "children": [
@@ -7490,693 +7469,693 @@
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10280,
+      "offset": 10281,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10310,
+      "offset": 10311,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 10432,
+      "offset": 10433,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10514,
+      "offset": 10515,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10520,
+      "offset": 10521,
       "length": 2,
       "value": "70"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10653,
+      "offset": 10654,
       "length": 3,
       "value": "255"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 10657,
+      "offset": 10658,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10671,
+      "offset": 10672,
       "length": 3,
       "value": "255"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 10675,
+      "offset": 10676,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 10688,
+      "offset": 10689,
       "length": 3,
       "value": "255"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 10692,
+      "offset": 10693,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 10706,
+      "offset": 10707,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 10993,
+      "offset": 10994,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 11144,
+      "offset": 11145,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "StringLiteral",
-      "offset": 11327,
+      "offset": 11328,
       "length": 17,
       "value": "\"callbackHandler\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 11469,
+      "offset": 11470,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 11475,
+      "offset": 11476,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 11552,
+      "offset": 11553,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 11687,
+      "offset": 11688,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12129,
+      "offset": 12130,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12135,
+      "offset": 12136,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12181,
+      "offset": 12182,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "StringLiteral",
-      "offset": 12227,
+      "offset": 12228,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "StringLiteral",
-      "offset": 12582,
+      "offset": 12583,
       "length": 7,
       "value": "\"xmark\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12692,
+      "offset": 12693,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12824,
+      "offset": 12825,
       "length": 2,
       "value": "27"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 12827,
+      "offset": 12828,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12841,
+      "offset": 12842,
       "length": 2,
       "value": "51"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 12844,
+      "offset": 12845,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12857,
+      "offset": 12858,
       "length": 3,
       "value": "128"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 12861,
+      "offset": 12862,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 12875,
+      "offset": 12876,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12955,
+      "offset": 12956,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13029,
+      "offset": 13030,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13036,
+      "offset": 13037,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13047,
+      "offset": 13048,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13059,
+      "offset": 13060,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "StringLiteral",
-      "offset": 13286,
+      "offset": 13287,
       "length": 18,
       "value": "\"chevron.backward\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13406,
+      "offset": 13407,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13547,
+      "offset": 13548,
       "length": 2,
       "value": "27"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 13550,
+      "offset": 13551,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13564,
+      "offset": 13565,
       "length": 2,
       "value": "51"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 13567,
+      "offset": 13568,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13580,
+      "offset": 13581,
       "length": 3,
       "value": "128"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 13584,
+      "offset": 13585,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 13598,
+      "offset": 13599,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13688,
+      "offset": 13689,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13736,
+      "offset": 13737,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13743,
+      "offset": 13744,
       "length": 1,
       "value": "6"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13753,
+      "offset": 13754,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 13765,
+      "offset": 13766,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 13808,
+      "offset": 13809,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 14131,
+      "offset": 14132,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 14161,
+      "offset": 14162,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 14401,
+      "offset": 14402,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 14499,
+      "offset": 14500,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 14537,
+      "offset": 14538,
       "length": 4,
       "value": "0.15"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 14579,
+      "offset": 14580,
       "length": 3,
       "value": "0.8"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 14622,
+      "offset": 14623,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 14965,
+      "offset": 14966,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 15116,
+      "offset": 15117,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "StringLiteral",
-      "offset": 15299,
+      "offset": 15300,
       "length": 17,
       "value": "\"callbackHandler\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 15441,
+      "offset": 15442,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 15447,
+      "offset": 15448,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 15524,
+      "offset": 15525,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 15659,
+      "offset": 15660,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 15956,
+      "offset": 15957,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 15962,
+      "offset": 15963,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 16008,
+      "offset": 16009,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "StringLiteral",
-      "offset": 16054,
+      "offset": 16055,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "StringLiteral",
-      "offset": 16567,
+      "offset": 16568,
       "length": 7,
       "value": "\"xmark\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 16677,
+      "offset": 16678,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 16809,
+      "offset": 16810,
       "length": 2,
       "value": "27"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 16812,
+      "offset": 16813,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 16826,
+      "offset": 16827,
       "length": 2,
       "value": "51"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 16829,
+      "offset": 16830,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 16842,
+      "offset": 16843,
       "length": 3,
       "value": "128"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 16846,
+      "offset": 16847,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 16860,
+      "offset": 16861,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 16940,
+      "offset": 16941,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 17007,
+      "offset": 17008,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17015,
+      "offset": 17016,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17026,
+      "offset": 17027,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17038,
+      "offset": 17039,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "StringLiteral",
-      "offset": 17265,
+      "offset": 17266,
       "length": 18,
       "value": "\"chevron.backward\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17385,
+      "offset": 17386,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17526,
+      "offset": 17527,
       "length": 2,
       "value": "27"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 17529,
+      "offset": 17530,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17543,
+      "offset": 17544,
       "length": 2,
       "value": "51"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 17546,
+      "offset": 17547,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17559,
+      "offset": 17560,
       "length": 3,
       "value": "128"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 17563,
+      "offset": 17564,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "FloatLiteral",
-      "offset": 17577,
+      "offset": 17578,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17667,
+      "offset": 17668,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17715,
+      "offset": 17716,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17722,
+      "offset": 17723,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17733,
+      "offset": 17734,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 17745,
+      "offset": 17746,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/MobileCXManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 17788,
+      "offset": 17789,
       "length": 4,
       "value": "true"
     },
