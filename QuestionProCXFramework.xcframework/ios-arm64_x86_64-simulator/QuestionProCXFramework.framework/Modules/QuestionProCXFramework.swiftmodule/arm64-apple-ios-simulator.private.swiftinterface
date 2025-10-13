@@ -109,6 +109,7 @@ public let kIsSurveyLaunched: Swift.String
 public let kIntercepts: Swift.String
 public let kApiKey: Swift.String
 public let kDataCenter: Swift.String
+public let kConfigType: Swift.String
 public enum APIRequestType : Swift.String {
   case GET
   case POST
@@ -259,7 +260,7 @@ public class TouchPoint {
   @_Concurrency.MainActor public func launchSurvey(showInDialog: Swift.Bool, triggerDelayInSeconds: Swift.Int)
   @_Concurrency.MainActor @preconcurrency @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
   @_Concurrency.MainActor public func showSurvey(isInAppSurvey: Swift.Bool)
-  @_Concurrency.MainActor public func stopQuestionProCXManager()
+  @_Concurrency.MainActor public func closeSurveyWindow()
   @_Concurrency.MainActor public func loadSurveyURLInWebView()
   @_Concurrency.MainActor @objc public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping @_Concurrency.MainActor @Sendable (WebKit.WKNavigationActionPolicy) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency @objc public func webView(_ webView: WebKit.WKWebView, didStartProvisionalNavigation navigation: WebKit.WKNavigation!)
