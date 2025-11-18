@@ -35,6 +35,15 @@ public struct CoreSurveyURL : Swift.Codable {
   public static func setIntercepts(key: Swift.String, value: Foundation.Data)
   public static func getIntercepts(key: Swift.String) -> Foundation.Data?
   public static func getInterceptById(key: Swift.String) -> Foundation.Data?
+  public static func setDataMappings(dataMappings: [QuestionProCXFramework.DataMappings])
+  @discardableResult
+  public static func appendDataMappings(newMappings: [QuestionProCXFramework.DataMappings]) -> [QuestionProCXFramework.DataMappings]
+  public static func getDataMapping() -> [Swift.String : Swift.String]?
+  public static func getDataMappings() -> [QuestionProCXFramework.DataMappings]?
+  public static func mergeUserDataMappings(userMappings: [Swift.String : Swift.String]) -> [QuestionProCXFramework.DataMappings]?
+  @discardableResult
+  public static func updateDataMappingValue(displayName: Swift.String, value: Swift.String) -> Swift.Bool
+  public static func getDataMappingValue(displayName: Swift.String) -> Swift.String?
   public static func setInterceptForInterceptId(key: Swift.String, value: [Swift.String])
   public static func getInterceptForInterceptId(key: Swift.String) -> [Swift.String]
   public static func getIntFromUserDefaults(key: Swift.String) -> Swift.Int?
@@ -115,6 +124,7 @@ public let kIntercepts: Swift.String
 public let kApiKey: Swift.String
 public let kDataCenter: Swift.String
 public let kConfigType: Swift.String
+public let kDataMappings: Swift.String
 public enum APIRequestType : Swift.String {
   case GET
   case POST
@@ -197,6 +207,14 @@ public struct Intercept : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct DataMappings : Swift.Codable {
+  public let variable: Swift.String
+  public let displayName: Swift.String
+  public var value: Swift.String
+  public init(variable: Swift.String, displayName: Swift.String, value: Swift.String = "")
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 public struct Settings : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -231,8 +249,6 @@ public class TouchPoint {
   public var dataCenter: QuestionProCXFramework.TouchPoint.DataCenter
   public var customVariables: [Swift.Int : Swift.String]?
   public static func initTouchPoint(dataCenter: QuestionProCXFramework.TouchPoint.DataCenter) -> QuestionProCXFramework.TouchPoint
-  public func setCustomVariables(_ customVariables: [Swift.Int : Swift.String]?) -> QuestionProCXFramework.TouchPoint
-  public func getCustomVariables() -> [Swift.Int : Swift.String]?
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor public class QuestionProCX : ObjectiveC.NSObject, UIKit.UIAlertViewDelegate, WebKit.WKNavigationDelegate, WebKit.WKScriptMessageHandler, QuestionProCXFramework.SurveyLaunchDelegate {
@@ -256,6 +272,7 @@ public class TouchPoint {
   @_Concurrency.MainActor public var touchPoint: QuestionProCXFramework.TouchPoint?
   @_Concurrency.MainActor @objc override dynamic public init()
   @_Concurrency.MainActor public static func getinstance() -> QuestionProCXFramework.QuestionProCX
+  @_Concurrency.MainActor public func setDataMappings(dataMappings: [Swift.String : Swift.String])
   @_Concurrency.MainActor public func fetchSurveyURLForSurveyId(interceptId: Swift.Int, interceptData: QuestionProCXFramework.Intercept, interceptType: Swift.String)
   @_Concurrency.MainActor public func fetchAndSetupIntercepts() async
   @_Concurrency.MainActor public func launchFeedbackSurvey(surveyId: Swift.Int)
