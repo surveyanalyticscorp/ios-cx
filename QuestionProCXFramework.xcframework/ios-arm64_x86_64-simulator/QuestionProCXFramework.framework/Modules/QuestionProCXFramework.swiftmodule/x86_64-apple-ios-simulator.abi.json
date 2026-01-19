@@ -1529,6 +1529,71 @@
               "Custom"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "setVisitorUUID",
+            "printedName": "setVisitorUUID(key:value:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22QuestionProCXFramework10CacheUtilsC14setVisitorUUID3key5valueySS_SStFZ",
+            "mangledName": "$s22QuestionProCXFramework10CacheUtilsC14setVisitorUUID3key5valueySS_SStFZ",
+            "moduleName": "QuestionProCXFramework",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getVisitorUUID",
+            "printedName": "getVisitorUUID(key:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22QuestionProCXFramework10CacheUtilsC14getVisitorUUID3keyS2S_tFZ",
+            "mangledName": "$s22QuestionProCXFramework10CacheUtilsC14getVisitorUUID3keyS2S_tFZ",
+            "moduleName": "QuestionProCXFramework",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -1720,10 +1785,41 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "QuestionProCXFramework"
+      },
+      {
         "kind": "TypeDecl",
         "name": "GlobalUtils",
         "printedName": "GlobalUtils",
         "children": [
+          {
+            "kind": "Function",
+            "name": "getDeviceId",
+            "printedName": "getDeviceId()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:22QuestionProCXFramework11GlobalUtilsC11getDeviceIdSSyFZ",
+            "mangledName": "$s22QuestionProCXFramework11GlobalUtilsC11getDeviceIdSSyFZ",
+            "moduleName": "QuestionProCXFramework",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "Custom"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
           {
             "kind": "Function",
             "name": "getAppLanguage",
@@ -3680,6 +3776,51 @@
             "declKind": "Accessor",
             "usr": "s:22QuestionProCXFramework13kDataMappingsSSvg",
             "mangledName": "$s22QuestionProCXFramework13kDataMappingsSSvg",
+            "moduleName": "QuestionProCXFramework",
+            "implicit": true,
+            "accessorKind": "get"
+          }
+        ]
+      },
+      {
+        "kind": "Var",
+        "name": "kVisitorUUID",
+        "printedName": "kVisitorUUID",
+        "children": [
+          {
+            "kind": "TypeNominal",
+            "name": "String",
+            "printedName": "Swift.String",
+            "usr": "s:SS"
+          }
+        ],
+        "declKind": "Var",
+        "usr": "s:22QuestionProCXFramework12kVisitorUUIDSSvp",
+        "mangledName": "$s22QuestionProCXFramework12kVisitorUUIDSSvp",
+        "moduleName": "QuestionProCXFramework",
+        "declAttributes": [
+          "HasInitialValue",
+          "HasStorage",
+          "AccessControl"
+        ],
+        "isLet": true,
+        "hasStorage": true,
+        "accessors": [
+          {
+            "kind": "Accessor",
+            "name": "Get",
+            "printedName": "Get()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Accessor",
+            "usr": "s:22QuestionProCXFramework12kVisitorUUIDSSvg",
+            "mangledName": "$s22QuestionProCXFramework12kVisitorUUIDSSvg",
             "moduleName": "QuestionProCXFramework",
             "implicit": true,
             "accessorKind": "get"
@@ -7322,6 +7463,293 @@
             ]
           },
           {
+            "kind": "TypeDecl",
+            "name": "PLATFORM",
+            "printedName": "PLATFORM",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "ANDROID",
+                "printedName": "ANDROID",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(QuestionProCXFramework.TouchPoint.PLATFORM.Type) -> QuestionProCXFramework.TouchPoint.PLATFORM",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLATFORM",
+                        "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM",
+                        "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLATFORM",
+                            "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM",
+                            "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO7ANDROIDyA2EmF",
+                "mangledName": "$s22QuestionProCXFramework10TouchPointC8PLATFORMO7ANDROIDyA2EmF",
+                "moduleName": "QuestionProCXFramework"
+              },
+              {
+                "kind": "Var",
+                "name": "IOS",
+                "printedName": "IOS",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(QuestionProCXFramework.TouchPoint.PLATFORM.Type) -> QuestionProCXFramework.TouchPoint.PLATFORM",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLATFORM",
+                        "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM",
+                        "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLATFORM",
+                            "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM",
+                            "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO3IOSyA2EmF",
+                "mangledName": "$s22QuestionProCXFramework10TouchPointC8PLATFORMO3IOSyA2EmF",
+                "moduleName": "QuestionProCXFramework"
+              },
+              {
+                "kind": "Var",
+                "name": "FLUTTER",
+                "printedName": "FLUTTER",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(QuestionProCXFramework.TouchPoint.PLATFORM.Type) -> QuestionProCXFramework.TouchPoint.PLATFORM",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLATFORM",
+                        "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM",
+                        "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLATFORM",
+                            "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM",
+                            "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO7FLUTTERyA2EmF",
+                "mangledName": "$s22QuestionProCXFramework10TouchPointC8PLATFORMO7FLUTTERyA2EmF",
+                "moduleName": "QuestionProCXFramework"
+              },
+              {
+                "kind": "Var",
+                "name": "REACT_NATIVE",
+                "printedName": "REACT_NATIVE",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(QuestionProCXFramework.TouchPoint.PLATFORM.Type) -> QuestionProCXFramework.TouchPoint.PLATFORM",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLATFORM",
+                        "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM",
+                        "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "PLATFORM",
+                            "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM",
+                            "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO12REACT_NATIVEyA2EmF",
+                "mangledName": "$s22QuestionProCXFramework10TouchPointC8PLATFORMO12REACT_NATIVEyA2EmF",
+                "moduleName": "QuestionProCXFramework"
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(rawValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PLATFORM",
+                        "printedName": "QuestionProCXFramework.TouchPoint.PLATFORM",
+                        "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO8rawValueAESgSS_tcfc",
+                "mangledName": "$s22QuestionProCXFramework10TouchPointC8PLATFORMO8rawValueAESgSS_tcfc",
+                "moduleName": "QuestionProCXFramework",
+                "implicit": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Var",
+                "name": "rawValue",
+                "printedName": "rawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO8rawValueSSvp",
+                "mangledName": "$s22QuestionProCXFramework10TouchPointC8PLATFORMO8rawValueSSvp",
+                "moduleName": "QuestionProCXFramework",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO8rawValueSSvg",
+                    "mangledName": "$s22QuestionProCXFramework10TouchPointC8PLATFORMO8rawValueSSvg",
+                    "moduleName": "QuestionProCXFramework",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:22QuestionProCXFramework10TouchPointC8PLATFORMO",
+            "mangledName": "$s22QuestionProCXFramework10TouchPointC8PLATFORMO",
+            "moduleName": "QuestionProCXFramework",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "enumRawTypeName": "String",
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "RawRepresentable",
+                "printedName": "RawRepresentable",
+                "children": [
+                  {
+                    "kind": "TypeWitness",
+                    "name": "RawValue",
+                    "printedName": "RawValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:SY",
+                "mangledName": "$sSY"
+              }
+            ]
+          },
+          {
             "kind": "Var",
             "name": "dataCenter",
             "printedName": "dataCenter",
@@ -7409,41 +7837,19 @@
           },
           {
             "kind": "Var",
-            "name": "customVariables",
-            "printedName": "customVariables",
+            "name": "platform",
+            "printedName": "platform",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "[Swift.Int : Swift.String]?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Dictionary",
-                    "printedName": "[Swift.Int : Swift.String]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Int",
-                        "printedName": "Swift.Int",
-                        "usr": "s:Si"
-                      },
-                      {
-                        "kind": "TypeNominal",
-                        "name": "String",
-                        "printedName": "Swift.String",
-                        "usr": "s:SS"
-                      }
-                    ],
-                    "usr": "s:SD"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               }
             ],
             "declKind": "Var",
-            "usr": "s:22QuestionProCXFramework10TouchPointC15customVariablesSDySiSSGSgvp",
-            "mangledName": "$s22QuestionProCXFramework10TouchPointC15customVariablesSDySiSSGSgvp",
+            "usr": "s:22QuestionProCXFramework10TouchPointC8platformSSvp",
+            "mangledName": "$s22QuestionProCXFramework10TouchPointC8platformSSvp",
             "moduleName": "QuestionProCXFramework",
             "declAttributes": [
               "HasInitialValue",
@@ -7459,36 +7865,14 @@
                 "children": [
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "[Swift.Int : Swift.String]?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Dictionary",
-                        "printedName": "[Swift.Int : Swift.String]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Int",
-                            "printedName": "Swift.Int",
-                            "usr": "s:Si"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:SD"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:22QuestionProCXFramework10TouchPointC15customVariablesSDySiSSGSgvg",
-                "mangledName": "$s22QuestionProCXFramework10TouchPointC15customVariablesSDySiSSGSgvg",
+                "usr": "s:22QuestionProCXFramework10TouchPointC8platformSSvg",
+                "mangledName": "$s22QuestionProCXFramework10TouchPointC8platformSSvg",
                 "moduleName": "QuestionProCXFramework",
                 "implicit": true,
                 "accessorKind": "get"
@@ -7505,36 +7889,14 @@
                   },
                   {
                     "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "[Swift.Int : Swift.String]?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Dictionary",
-                        "printedName": "[Swift.Int : Swift.String]",
-                        "children": [
-                          {
-                            "kind": "TypeNominal",
-                            "name": "Int",
-                            "printedName": "Swift.Int",
-                            "usr": "s:Si"
-                          },
-                          {
-                            "kind": "TypeNominal",
-                            "name": "String",
-                            "printedName": "Swift.String",
-                            "usr": "s:SS"
-                          }
-                        ],
-                        "usr": "s:SD"
-                      }
-                    ],
-                    "usr": "s:Sq"
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:22QuestionProCXFramework10TouchPointC15customVariablesSDySiSSGSgvs",
-                "mangledName": "$s22QuestionProCXFramework10TouchPointC15customVariablesSDySiSSGSgvs",
+                "usr": "s:22QuestionProCXFramework10TouchPointC8platformSSvs",
+                "mangledName": "$s22QuestionProCXFramework10TouchPointC8platformSSvs",
                 "moduleName": "QuestionProCXFramework",
                 "implicit": true,
                 "accessorKind": "set"
@@ -7551,8 +7913,8 @@
                   }
                 ],
                 "declKind": "Accessor",
-                "usr": "s:22QuestionProCXFramework10TouchPointC15customVariablesSDySiSSGSgvM",
-                "mangledName": "$s22QuestionProCXFramework10TouchPointC15customVariablesSDySiSSGSgvM",
+                "usr": "s:22QuestionProCXFramework10TouchPointC8platformSSvM",
+                "mangledName": "$s22QuestionProCXFramework10TouchPointC8platformSSvM",
                 "moduleName": "QuestionProCXFramework",
                 "implicit": true,
                 "accessorKind": "_modify"
@@ -11339,42 +11701,49 @@
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Constants\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 1112,
+      "offset": 861,
+      "length": 13,
+      "value": "\"VisitorUUID\""
+    },
+    {
+      "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Constants\/AppConstant.swift",
+      "kind": "StringLiteral",
+      "offset": 1152,
       "length": 42,
       "value": "\"cx-intercept-staging-api.questionpro.com\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Constants\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 1189,
+      "offset": 1229,
       "length": 31,
       "value": "\"intercept-api.questionpro.com\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Constants\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 1268,
+      "offset": 1308,
       "length": 24,
       "value": "\"\/api\/v1\/visitor\/mobile\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Constants\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 1379,
+      "offset": 1419,
       "length": 40,
       "value": "\"\/api\/v1\/data-mapping\/mobile\/survey-url\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Constants\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 1452,
+      "offset": 1492,
       "length": 40,
       "value": "\"\/api\/v1\/visitor\/mobile\/survey-feedback\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Constants\/AppConstant.swift",
       "kind": "StringLiteral",
-      "offset": 1529,
+      "offset": 1569,
       "length": 20,
       "value": "\"\/a\/api\/v2\/surveys\/\""
     },
@@ -11387,10 +11756,31 @@
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Models\/TouchPoint.swift",
-      "kind": "Dictionary",
-      "offset": 607,
-      "length": 3,
-      "value": "[]"
+      "kind": "StringLiteral",
+      "offset": 561,
+      "length": 9,
+      "value": "\"android\""
+    },
+    {
+      "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Models\/TouchPoint.swift",
+      "kind": "StringLiteral",
+      "offset": 590,
+      "length": 5,
+      "value": "\"ios\""
+    },
+    {
+      "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Models\/TouchPoint.swift",
+      "kind": "StringLiteral",
+      "offset": 619,
+      "length": 9,
+      "value": "\"flutter\""
+    },
+    {
+      "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Models\/TouchPoint.swift",
+      "kind": "StringLiteral",
+      "offset": 657,
+      "length": 14,
+      "value": "\"react-native\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
@@ -11444,364 +11834,364 @@
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "BooleanLiteral",
-      "offset": 24399,
+      "offset": 23832,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 24521,
+      "offset": 23954,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 24551,
+      "offset": 23984,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 24842,
+      "offset": 24275,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 24957,
+      "offset": 24390,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 24964,
+      "offset": 24397,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 25027,
+      "offset": 24460,
       "length": 4,
       "value": "0.15"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 25034,
+      "offset": 24467,
       "length": 2,
       "value": "70"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 25101,
+      "offset": 24534,
       "length": 3,
       "value": "0.9"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 25202,
+      "offset": 24635,
       "length": 3,
       "value": "0.7"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "BooleanLiteral",
-      "offset": 25536,
+      "offset": 24969,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "StringLiteral",
-      "offset": 25740,
+      "offset": 25173,
       "length": 17,
       "value": "\"callbackHandler\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 25882,
+      "offset": 25315,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 25888,
+      "offset": 25321,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 25965,
+      "offset": 25398,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "BooleanLiteral",
-      "offset": 26100,
+      "offset": 25533,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 26397,
+      "offset": 25830,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 26403,
+      "offset": 25836,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 26449,
+      "offset": 25882,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "StringLiteral",
-      "offset": 26768,
+      "offset": 26201,
       "length": 7,
       "value": "\"xmark\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 26878,
+      "offset": 26311,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27010,
+      "offset": 26443,
       "length": 2,
       "value": "27"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 27013,
+      "offset": 26446,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27027,
+      "offset": 26460,
       "length": 2,
       "value": "51"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 27030,
+      "offset": 26463,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27043,
+      "offset": 26476,
       "length": 3,
       "value": "128"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 27047,
+      "offset": 26480,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 27061,
+      "offset": 26494,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27141,
+      "offset": 26574,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 27237,
+      "offset": 26670,
       "length": 4,
       "value": "0.80"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27246,
+      "offset": 26679,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27257,
+      "offset": 26690,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27269,
+      "offset": 26702,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27316,
+      "offset": 26749,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27323,
+      "offset": 26756,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27334,
+      "offset": 26767,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27346,
+      "offset": 26779,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "StringLiteral",
-      "offset": 27599,
+      "offset": 27032,
       "length": 18,
       "value": "\"chevron.backward\""
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27720,
+      "offset": 27153,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27861,
+      "offset": 27294,
       "length": 2,
       "value": "27"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 27864,
+      "offset": 27297,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27878,
+      "offset": 27311,
       "length": 2,
       "value": "51"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 27881,
+      "offset": 27314,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 27894,
+      "offset": 27327,
       "length": 3,
       "value": "128"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 27898,
+      "offset": 27331,
       "length": 5,
       "value": "255.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "FloatLiteral",
-      "offset": 27912,
+      "offset": 27345,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 28002,
+      "offset": 27435,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 28050,
+      "offset": 27483,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 28057,
+      "offset": 27490,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 28068,
+      "offset": 27501,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "IntegerLiteral",
-      "offset": 28080,
+      "offset": 27513,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/admin\/QuestionPro\/pearl-cx\/iOS-SDK\/MobileCXFramework\/Managers\/QuestionProCX.swift",
       "kind": "BooleanLiteral",
-      "offset": 28123,
+      "offset": 27556,
       "length": 4,
       "value": "true"
     },
