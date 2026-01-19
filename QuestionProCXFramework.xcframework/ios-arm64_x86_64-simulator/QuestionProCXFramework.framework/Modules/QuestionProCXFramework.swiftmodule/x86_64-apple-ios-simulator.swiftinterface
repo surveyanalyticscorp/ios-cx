@@ -60,6 +60,8 @@ public struct CoreSurveyURL : Swift.Codable {
   @_Concurrency.MainActor public static func setScreenVisitCountForInterceptId(key: Swift.String, value: Swift.Int)
   @_Concurrency.MainActor public static func getScreenVisitCountForInterceptId(key: Swift.String) -> Swift.Int
   @_Concurrency.MainActor public static func resetScreenVisitCountForInterceptId(key: Swift.String)
+  @_Concurrency.MainActor public static func setVisitorUUID(key: Swift.String, value: Swift.String)
+  @_Concurrency.MainActor public static func getVisitorUUID(key: Swift.String) -> Swift.String
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class GlobalData {
@@ -71,6 +73,7 @@ public struct CoreSurveyURL : Swift.Codable {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class GlobalUtils {
+  @_Concurrency.MainActor public static func getDeviceId() -> Swift.String
   public static func getAppLanguage() -> Swift.String
   @objc deinit
 }
@@ -125,6 +128,7 @@ public let kApiKey: Swift.String
 public let kDataCenter: Swift.String
 public let kConfigType: Swift.String
 public let kDataMappings: Swift.String
+public let kVisitorUUID: Swift.String
 public enum APIRequestType : Swift.String {
   case GET
   case POST
@@ -246,8 +250,19 @@ public class TouchPoint {
       get
     }
   }
+  public enum PLATFORM : Swift.String {
+    case ANDROID
+    case IOS
+    case FLUTTER
+    case REACT_NATIVE
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
   public var dataCenter: QuestionProCXFramework.TouchPoint.DataCenter
-  public var customVariables: [Swift.Int : Swift.String]?
+  public var platform: Swift.String
   public static func initTouchPoint(dataCenter: QuestionProCXFramework.TouchPoint.DataCenter) -> QuestionProCXFramework.TouchPoint
   @objc deinit
 }
@@ -340,4 +355,7 @@ extension QuestionProCXFramework.LogTag : Swift.RawRepresentable {}
 extension QuestionProCXFramework.TouchPoint.DataCenter : Swift.Equatable {}
 extension QuestionProCXFramework.TouchPoint.DataCenter : Swift.Hashable {}
 extension QuestionProCXFramework.TouchPoint.DataCenter : Swift.RawRepresentable {}
+extension QuestionProCXFramework.TouchPoint.PLATFORM : Swift.Equatable {}
+extension QuestionProCXFramework.TouchPoint.PLATFORM : Swift.Hashable {}
+extension QuestionProCXFramework.TouchPoint.PLATFORM : Swift.RawRepresentable {}
 extension QuestionProCXFramework.QuestionProCX : Swift.Sendable {}
