@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.0.3 (swiftlang-6.0.3.1.10 clang-1600.0.30.1)
-// swift-module-flags: -target x86_64-apple-ios15-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -module-name QuestionProCXFramework
+// swift-compiler-version: Apple Swift version 6.2.3 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target x86_64-apple-ios15-simulator -enable-objc-interop -enable-library-evolution -swift-version 6 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -module-name QuestionProCXFramework
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import Foundation
 import Security
 import Swift
@@ -22,35 +23,63 @@ public struct CoreSurveyURL : Swift.Codable {
   public static func getVisitorMobileAPIURL() -> Swift.String
   public static func getFetchSurveyURL() -> Swift.String
   public static func getUpdateInterceptSurveyLaunchEventURL() -> Swift.String
+  public static func getExcludedSurveyFeedbackURL() -> Swift.String
   public static func getCoreSurveyFeedbackURL() -> Swift.String
-  @_Concurrency.MainActor public static func updateInterceptSurveyLaunchEvent(interceptData: QuestionProCXFramework.Intercept, visitorId: Swift.String, surveyType: Swift.String)
+  @_Concurrency.MainActor public static func updateInterceptSurveyLaunchEvent(interceptData: QuestionProCXFramework.Intercept, visitorId: Swift.String)
+  @_Concurrency.MainActor public static func executeExcludedFeedbackEvent(interceptData: QuestionProCXFramework.Intercept, visitorId: Swift.String)
   public static func getBaseUrl(dataCenter: Swift.String) -> Swift.String
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class CacheUtils {
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getFromUserDefaults(key: Swift.String) -> [Swift.String : Any]?
+  #endif
   public static func setInterceptRulesForInterceptId(key: Swift.String, value: Foundation.Data)
   public static func resetInterceptRulesForInterceptId(key: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getInterceptRulesForInterceptId(key: Swift.String) -> Foundation.Data?
+  #endif
   public static func setIntercepts(key: Swift.String, value: Foundation.Data)
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getIntercepts(key: Swift.String) -> Foundation.Data?
+  #endif
+  public static func setCurrentInterceptId(key: Swift.String, value: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func getCurrentInterceptId(key: Swift.String) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getInterceptById(key: Swift.String) -> Foundation.Data?
+  #endif
   public static func setDataMappings(dataMappings: [QuestionProCXFramework.DataMappings])
   @discardableResult
   public static func appendDataMappings(newMappings: [QuestionProCXFramework.DataMappings]) -> [QuestionProCXFramework.DataMappings]
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getDataMapping() -> [Swift.String : Swift.String]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getDataMappings() -> [QuestionProCXFramework.DataMappings]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func mergeUserDataMappings(userMappings: [Swift.String : Swift.String]) -> [QuestionProCXFramework.DataMappings]?
+  #endif
   @discardableResult
   public static func updateDataMappingValue(displayName: Swift.String, value: Swift.String) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getDataMappingValue(displayName: Swift.String) -> Swift.String?
+  #endif
   public static func setInterceptForInterceptId(key: Swift.String, value: [Swift.String])
   public static func getInterceptForInterceptId(key: Swift.String) -> [Swift.String]
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getIntFromUserDefaults(key: Swift.String) -> Swift.Int?
+  #endif
   public static func setToUserDefaults(key: Swift.String, value: Any)
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getFromUserDefaults<T>(key: Swift.String, type: T.Type) -> T?
+  #endif
   public static func resetIntUserDefaults(key: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
   public static func getValueFromUserDefaults(key: Swift.String) -> Any?
+  #endif
   public static func getIsSurveyLaunched(key: Swift.String) -> Swift.Bool
   public static func setIsSurveyLaunched(key: Swift.String, value: Swift.Bool)
   public static func clearUserDefaults(key: Swift.String)
@@ -75,6 +104,7 @@ public struct CoreSurveyURL : Swift.Codable {
 @_hasMissingDesignatedInitializers public class GlobalUtils {
   @_Concurrency.MainActor public static func getDeviceId() -> Swift.String
   public static func getAppLanguage() -> Swift.String
+  public static func checkSamplingLogic(samplingRate: Swift.Int, matchedCount: Swift.Int, excludedCount: Swift.Int) -> Swift.Bool
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class LogUtils {
@@ -111,8 +141,12 @@ public struct CoreSurveyURL : Swift.Codable {
   public func stopTimer(for interceptId: Swift.Int)
   public func stopAllTimers()
   public func getActiveTimerIds() -> [Swift.Int]
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getRemainingTime(for interceptId: Swift.Int) -> Swift.Int?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getOriginalInterval(for interceptId: Swift.Int) -> Swift.Int?
+  #endif
   @objc deinit
 }
 public let ksurveyURL: Swift.String
@@ -129,10 +163,13 @@ public let kDataCenter: Swift.String
 public let kConfigType: Swift.String
 public let kDataMappings: Swift.String
 public let kVisitorUUID: Swift.String
+public let kCurrentInterceptId: Swift.String
 public enum APIRequestType : Swift.String {
   case GET
   case POST
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -143,12 +180,15 @@ public let kMobileAPIProduction: Swift.String
 public let kMobileCXGetSurveyURL: Swift.String
 public let kGetSurveyURL: Swift.String
 public let kSurveyFeedbackURL: Swift.String
+public let kSurveyFeebackExcludedFeedback: Swift.String
 public let kCoreSurveyFeedbackURL: Swift.String
 public let kPackageName: Swift.String
 public let kEnvironment: Swift.String
 public enum InterceptType : Swift.String {
   case PROMPT, EMBED, SURVEY_URL
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -156,7 +196,9 @@ public enum InterceptType : Swift.String {
 }
 public enum InterceptRuleType : Swift.String {
   case TIME_SPENT, VIEW_COUNT, DAY, DATE
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -164,15 +206,19 @@ public enum InterceptRuleType : Swift.String {
 }
 public enum InterceptCondition : Swift.String {
   case AND, OR
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
 }
 public enum InterceptSurveyLaunchEvent : Swift.String {
-  case MATCHED, LAUNCHED
+  case MATCHED, LAUNCHED, EXCLUDED
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -180,7 +226,9 @@ public enum InterceptSurveyLaunchEvent : Swift.String {
 }
 public enum LogTag : Swift.String {
   case LOG_ERROR, LOG_INFO
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
+  #endif
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
@@ -211,6 +259,13 @@ public struct Intercept : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct MetaData : Swift.Codable {
+  public let matchedCount: Swift.Int
+  public let excludedCount: Swift.Int
+  public let visitorStatus: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
 public struct DataMappings : Swift.Codable {
   public let variable: Swift.String
   public let displayName: Swift.String
@@ -220,8 +275,8 @@ public struct DataMappings : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct Settings : Swift.Codable {
-  public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct Rule : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
@@ -244,7 +299,9 @@ public class TouchPoint {
     case DATA_CENTER_SG
     case DATA_CENTER_SA
     case DATA_CENTER_KSA
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -255,7 +312,9 @@ public class TouchPoint {
     case IOS
     case FLUTTER
     case REACT_NATIVE
+    #if compiler(>=5.3) && $NonescapableTypes
     public init?(rawValue: Swift.String)
+    #endif
     public typealias RawValue = Swift.String
     public var rawValue: Swift.String {
       get
@@ -291,7 +350,9 @@ public class TouchPoint {
   @_Concurrency.MainActor public func fetchSurveyURLForSurveyId(interceptId: Swift.Int, interceptData: QuestionProCXFramework.Intercept, interceptType: Swift.String)
   @_Concurrency.MainActor public func fetchAndSetupIntercepts() async
   @_Concurrency.MainActor public func launchFeedbackSurvey(surveyId: Swift.Int)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor public func configure(apiKey: Swift.String, touchPoint: QuestionProCXFramework.TouchPoint, withWindow aWindow: UIKit.UIWindow, initCallbackDelegate: (any QuestionProCXFramework.QuestionProInitDelegate)?)
+  #endif
   @_Concurrency.MainActor public func setQuestionProCallbackDelegate(questionProCallbackDelegate: any QuestionProCXFramework.QuestionProCallbackDelegate)
   @_Concurrency.MainActor public func enableLogs(enabledLogs: Swift.Bool)
   @_Concurrency.MainActor public func launchSurvey(showInDialog: Swift.Bool, triggerDelayInSeconds: Swift.Int)
@@ -300,9 +361,15 @@ public class TouchPoint {
   @_Concurrency.MainActor public func closeSurveyWindow()
   @_Concurrency.MainActor public func loadSurveyURLInWebView()
   @_Concurrency.MainActor @objc public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping @_Concurrency.MainActor @Sendable (WebKit.WKNavigationActionPolicy) -> Swift.Void)
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public func webView(_ webView: WebKit.WKWebView, didStartProvisionalNavigation navigation: WebKit.WKNavigation!)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency @objc public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: any Swift.Error)
+  #endif
   @_Concurrency.MainActor public func currentViewLoaded()
   @_Concurrency.MainActor public func currentViewUnLoaded()
   @objc deinit
@@ -324,7 +391,9 @@ public class TouchPoint {
   @_Concurrency.MainActor @preconcurrency public var isSpinning: Swift.Bool
   @_Concurrency.MainActor @preconcurrency public static func setOnView(_ view: UIKit.UIView, withTitle title: Swift.String, animated: Swift.Bool) -> QuestionProCXFramework.GMDCircleLoader
   @_Concurrency.MainActor @preconcurrency public static func hideFromView(_ view: UIKit.UIView, animated: Swift.Bool) -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
   @_Concurrency.MainActor @preconcurrency public static func HUDForView(_ view: UIKit.UIView) -> QuestionProCXFramework.GMDCircleLoader?
+  #endif
   @_Concurrency.MainActor @preconcurrency public func setup()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func draw(_ rect: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency public func drawBackgroundCircle(partial: Swift.Bool)
