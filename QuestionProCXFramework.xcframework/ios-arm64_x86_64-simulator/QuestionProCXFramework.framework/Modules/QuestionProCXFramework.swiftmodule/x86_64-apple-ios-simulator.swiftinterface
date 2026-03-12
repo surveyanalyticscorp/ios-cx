@@ -34,6 +34,8 @@ public struct CoreSurveyURL : Swift.Codable {
   #if compiler(>=5.3) && $NonescapableTypes
   public static func getFromUserDefaults(key: Swift.String) -> [Swift.String : Any]?
   #endif
+  public static func setIsSurveyCurrentlyVisible(value: Swift.Bool)
+  public static func getIsSurveyCurrentlyVisible() -> Swift.Bool
   public static func setInterceptRulesForInterceptId(key: Swift.String, value: Foundation.Data)
   public static func resetInterceptRulesForInterceptId(key: Swift.String)
   #if compiler(>=5.3) && $NonescapableTypes
@@ -164,6 +166,7 @@ public let kConfigType: Swift.String
 public let kDataMappings: Swift.String
 public let kVisitorUUID: Swift.String
 public let kCurrentInterceptId: Swift.String
+public let kIsSurveyCurrentlyVisible: Swift.String
 public enum APIRequestType : Swift.String {
   case GET
   case POST
