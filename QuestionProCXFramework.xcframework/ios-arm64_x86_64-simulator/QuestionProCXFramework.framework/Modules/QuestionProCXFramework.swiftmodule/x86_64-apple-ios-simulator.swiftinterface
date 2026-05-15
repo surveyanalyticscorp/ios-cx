@@ -237,6 +237,17 @@ public enum LogTag : Swift.String {
     get
   }
 }
+public enum WidgetPosition : Swift.String, Swift.Codable {
+  case TOP_CENTER, CENTER_CENTER, BOTTOM_CENTER
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public let IN_APP_SURVEY_CORNER_RADIUS: CoreFoundation.CGFloat
 public struct InterceptSurveyLaunchEventResponse : Swift.Codable {
   public var success: Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
@@ -259,6 +270,10 @@ public struct Project : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct Intercept : Swift.Codable {
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct WidgetSettings : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -358,9 +373,13 @@ public class TouchPoint {
   #endif
   @_Concurrency.MainActor public func setQuestionProCallbackDelegate(questionProCallbackDelegate: any QuestionProCXFramework.QuestionProCallbackDelegate)
   @_Concurrency.MainActor public func enableLogs(enabledLogs: Swift.Bool)
-  @_Concurrency.MainActor public func launchSurvey(showInDialog: Swift.Bool, triggerDelayInSeconds: Swift.Int)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public func launchSurvey(showInDialog: Swift.Bool, triggerDelayInSeconds: Swift.Int, widgetSettings: QuestionProCXFramework.WidgetSettings? = nil)
+  #endif
   @_Concurrency.MainActor @preconcurrency @objc public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
-  @_Concurrency.MainActor public func showSurvey(isInAppSurvey: Swift.Bool)
+  #if compiler(>=5.3) && $NonescapableTypes
+  @_Concurrency.MainActor public func showSurvey(isInAppSurvey: Swift.Bool, widgetSettings: QuestionProCXFramework.WidgetSettings? = nil)
+  #endif
   @_Concurrency.MainActor public func closeSurveyWindow()
   @_Concurrency.MainActor public func loadSurveyURLInWebView()
   @_Concurrency.MainActor @objc public func webView(_ webView: WebKit.WKWebView, decidePolicyFor navigationAction: WebKit.WKNavigationAction, decisionHandler: @escaping @_Concurrency.MainActor @Sendable (WebKit.WKNavigationActionPolicy) -> Swift.Void)
@@ -424,6 +443,9 @@ extension QuestionProCXFramework.InterceptSurveyLaunchEvent : Swift.RawRepresent
 extension QuestionProCXFramework.LogTag : Swift.Equatable {}
 extension QuestionProCXFramework.LogTag : Swift.Hashable {}
 extension QuestionProCXFramework.LogTag : Swift.RawRepresentable {}
+extension QuestionProCXFramework.WidgetPosition : Swift.Equatable {}
+extension QuestionProCXFramework.WidgetPosition : Swift.Hashable {}
+extension QuestionProCXFramework.WidgetPosition : Swift.RawRepresentable {}
 extension QuestionProCXFramework.TouchPoint.DataCenter : Swift.Equatable {}
 extension QuestionProCXFramework.TouchPoint.DataCenter : Swift.Hashable {}
 extension QuestionProCXFramework.TouchPoint.DataCenter : Swift.RawRepresentable {}
