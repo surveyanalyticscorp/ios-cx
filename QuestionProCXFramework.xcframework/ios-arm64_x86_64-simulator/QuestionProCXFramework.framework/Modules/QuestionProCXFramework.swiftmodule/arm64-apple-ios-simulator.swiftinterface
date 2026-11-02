@@ -66,7 +66,7 @@ public enum InterceptType : Swift.String {
   }
 }
 public enum InterceptRuleType : Swift.String {
-  case TIME_SPENT, VIEW_COUNT, DAY, DATE
+  case TIME_SPENT, VIEW_COUNT, DAY, DATE, OS, COUNTRY
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
   #endif
@@ -75,6 +75,17 @@ public enum InterceptRuleType : Swift.String {
     get
   }
 }
+public enum InterceptRuleOperand : Swift.String {
+  case EQUAL, NOT_EQUAL
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public let kCurrentOS: Swift.String
 public enum InterceptCondition : Swift.String {
   case AND, OR
   #if compiler(>=5.3) && $NonescapableTypes
@@ -310,6 +321,8 @@ public struct InterceptSurveyLaunchEventResponse : Swift.Codable {
   @_Concurrency.MainActor public func checkSurveyLaunchDayLogic(days: Swift.String, interceptId: Swift.Int, interceptRule: QuestionProCXFramework.Rule, completionDelegate: any QuestionProCXFramework.SurveyLaunchDelegate)
   @_Concurrency.MainActor public func getAppUserInteractionTimeInSeconds() -> Swift.Int
   @_Concurrency.MainActor public func checkSurveyLaunchDateOfMonthLogic(dates: Swift.String, interceptId: Swift.Int, interceptRule: QuestionProCXFramework.Rule, completionDelegate: any QuestionProCXFramework.SurveyLaunchDelegate)
+  @_Concurrency.MainActor public func checkSurveyLaunchOSLogic(interceptId: Swift.Int, interceptRule: QuestionProCXFramework.Rule, completionDelegate: any QuestionProCXFramework.SurveyLaunchDelegate)
+  @_Concurrency.MainActor public func checkSurveyLaunchCountryLogic(interceptId: Swift.Int, interceptRule: QuestionProCXFramework.Rule, completionDelegate: any QuestionProCXFramework.SurveyLaunchDelegate)
   @_Concurrency.MainActor @objc override dynamic public init()
   @objc deinit
 }
@@ -459,6 +472,9 @@ extension QuestionProCXFramework.InterceptType : Swift.RawRepresentable {}
 extension QuestionProCXFramework.InterceptRuleType : Swift.Equatable {}
 extension QuestionProCXFramework.InterceptRuleType : Swift.Hashable {}
 extension QuestionProCXFramework.InterceptRuleType : Swift.RawRepresentable {}
+extension QuestionProCXFramework.InterceptRuleOperand : Swift.Equatable {}
+extension QuestionProCXFramework.InterceptRuleOperand : Swift.Hashable {}
+extension QuestionProCXFramework.InterceptRuleOperand : Swift.RawRepresentable {}
 extension QuestionProCXFramework.InterceptCondition : Swift.Equatable {}
 extension QuestionProCXFramework.InterceptCondition : Swift.Hashable {}
 extension QuestionProCXFramework.InterceptCondition : Swift.RawRepresentable {}
